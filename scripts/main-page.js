@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let serviceBtn = document.querySelector('.service-center__button');
   let thanksModal = document.querySelector('.modal-thanks');
   let closeModalBtn = document.querySelector('.modal-thanks__close');
+  let body = document.body;
 
 
   if (localStorage['city']) {
@@ -48,10 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //'#' + 181818
   function openMobCity() {
     mobCities.classList.add('js-cities__active');
-    let cityList = document.querySelector('.service-center__city-list');
+    let cityList = document.querySelector('.service-center__city-list-mobile');
     cityList.style.opacity = 1;
     cityList.style.visibility = 'visible';
     cityList.style.height = 100 + '%';
+    body.style.overflow = 'hidden';
   }
 
   const appendCityList = () => {
@@ -71,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mobCities.classList.remove('js-cities__active');
       cityList.style.opacity = 0;
       cityList.style.visibility = 'hidden';
+      body.style.overflow = 'visible';
     })
   }
 
@@ -192,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const containHideHeaderRemove = () => headerFixed.classList.remove('hide-header');
 
 
-  const jsMenu = document.querySelector(".js-menu__mob")
+  // const jsMenu = document.querySelector(".js-menu__mob")
 
 
   window.addEventListener('scroll', headerVisible)
@@ -235,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     openBtn.addEventListener('click', () => {
       mobMenu.classList.add('js-menu__mob_active');
+      // добавление контактов
       window.removeEventListener('scroll', headerVisible);
     });
     closeBtn.addEventListener('click', () => {
