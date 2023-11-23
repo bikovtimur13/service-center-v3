@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const jsMenu = document.querySelector(".js-menu__mob")
 
 
-  window.addEventListener('scroll', text)
+  window.addEventListener('scroll', headerVisible)
 
 
-  function text() {
+  function headerVisible() {
     // const jsMenu = document.querySelector(".js-menu__mob")
     // const active = jsMenu.querySelector('.js-menu__mob_active')
 
@@ -235,24 +235,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     openBtn.addEventListener('click', () => {
       mobMenu.classList.add('js-menu__mob_active');
-      window.removeEventListener('scroll', text);
+      window.removeEventListener('scroll', headerVisible);
     });
     closeBtn.addEventListener('click', () => {
       mobMenu.classList.remove('js-menu__mob_active');
-      window.addEventListener('scroll', text);
+      window.addEventListener('scroll', headerVisible);
     });
 
     openBtnFixed.addEventListener('click', () => {
       mobMenu.classList.add('js-menu__mob_active');
       containHideHeaderRemove();
-      window.removeEventListener('scroll', text);
+      window.removeEventListener('scroll', headerVisible);
       // openBtnFixed.classList.add('hide-burger-fixed');
       // closeBtnFixed.classList.add("hide-close-fixed");
     });
 
     closeBtnFixed.addEventListener('click', () => {
       mobMenu.classList.remove('js-menu__mob_active');
-      window.addEventListener('scroll', text);
+      window.addEventListener('scroll', headerVisible);
       openBtnFixed.classList.remove('hide-burger-fixed');
       closeBtnFixed.classList.remove("hide-close-fixed");
     });

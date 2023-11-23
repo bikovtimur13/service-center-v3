@@ -703,9 +703,12 @@ body {
 
 
 .service-center {
-    padding: 10px 0 0;
+    padding: 10px 0 1px;
     margin: -110px 0 0;
     position: relative;
+
+    background: url("/assets/images/main-page/bg-img_result.webp") no-repeat center;
+    background-size: cover;
 
     @include nsm {
         background: url("/assets/images/main-page/bg-img-main-mobile_result.webp") no-repeat center;
@@ -1179,7 +1182,7 @@ body {
             background: #2FCDFF;
             box-shadow: 0px 18.82987px 18.82987px 0px rgba(0, 0, 0, 0.05);
             backdrop-filter: blur(7.061201095581055px);
-            cursor: pointer;
+            cursor: default;
             transition: .2S;
             align-items: center;
             display: flex;
@@ -1199,15 +1202,13 @@ body {
                 font-size: Clamp(18px, 1.5vw, 25px);
                 text-align: center;
                 text-transform: uppercase;
+                cursor: default;
 
                 @include nsm {
                     text-transform: math-auto;
                 }
             }
 
-            &:hover {
-                scale: 1.03;
-            }
 
             @include nmd {
                 border-radius: 13px;
