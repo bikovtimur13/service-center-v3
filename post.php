@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
+//test
 if ($_SERVER['HTTP_REFERER'] != "https://yamaguchi-service-moskva.ru/") {
     header("HTTP/1.0 403 Forbidden");
     echo "Доступ запрещен";
