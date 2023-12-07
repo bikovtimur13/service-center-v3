@@ -240,15 +240,15 @@
             </ul>
             <form class="service-center__form">
                 <div class="__js__input-wrapper">
-                    <input class="service-center__input __js__input service-center__name" type="text" name="name" placeholder="Имя" required pattern="[A-Za-zА-яа-я]{2,}">
+                    <input class="service-center__input __js__input service-center__name" type="text" name="name" placeholder="Имя" value="tess" required pattern="[A-Za-zА-яа-я]{2,}">
                     <p class="__js__err service-center__err">Пожалуйста, введите имя</p>
                 </div>
                 <div class="__js__input-wrapper">
-                    <input  class="service-center__input __js__input" type="tel" placeholder="Телефон для связи" name="tel" required pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                    <input  class="service-center__input __js__input" type="tel" value="89555555555" placeholder="Телефон для связи" name="tel" required pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
                     <p  class="__js__err service-center__err">Пожалуйста, введите номер телефона</p>
                 </div>
                 <div class="__js__input-wrapper">
-                    <input  class="service-center__input __js__input" type="email" placeholder="e-mail" name="email" pattern="\S+\.[a-z]{2,4}$"  required>
+                    <input  class="service-center__input __js__input" type="email" placeholder="e-mail" name="email" pattern="\S+\.[a-z]{2,4}$" value="ya@ya.ru"   required>
                     <p  class="__js__err service-center__err">Введите корректный адрес электронной почты</p>
                 </div>
                 <textarea class="__js__input  service-center__input service-center__textarea" name="message" placeholder="Модель оборудования и симптомы поломки"></textarea>
