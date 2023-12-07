@@ -1,6 +1,13 @@
 <?php
 header('Content-Type: application/json');
 
+
+if ($_SERVER['HTTP_REFERER'] != "http://yamaguchi-service-moskva.ru/post.php") {
+    header("HTTP/1.0 403 Forbidden");
+    echo "Доступ запрещен";
+    exit;
+}
+
 $blobinfo = md5(date('Y-m') . "77_JSKjmk.m#");
 $url = 'https://orders.borboza.com/site/service2023/new-service-task/blobinfo/' . $blobinfo;
 
