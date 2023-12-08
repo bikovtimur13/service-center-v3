@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.json()
                 })
                 .then(data => {
-
+    console.log(data);
                     var orderNumberElement = document.querySelector('.__js__order-number');
 
 // Установить значение элемента
