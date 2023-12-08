@@ -343,7 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
             })
 
-            console.log(this.button)
             this.button.addEventListener('click', (event) => {
                 event.preventDefault();
                 let isValid = this.form.checkValidity()
@@ -381,13 +380,40 @@ document.addEventListener('DOMContentLoaded', () => {
         sendForm(event) {
             let formData = new FormData(this.form);
 
+            const firstForm = document.querySelector('.service-center__form')
+            const secondForm = document.querySelector('.contacts__form')
+
+            const elementsFirstForm = firstForm.elements
+            const elementsSecondForm = secondForm.elements
+
+            for (let i = 0; i < elementsFirstForm.length; i++) {
+                elementsFirstForm[i].setAttribute('disabled', 'true');
+                this.button.classList.add('_disabled');
+            }
+            
+            for (let i = 0; i < elementsSecondForm.length; i++) {
+                elementsSecondForm[i].setAttribute('disabled', 'true');
+                this.button.classList.add('_disabled');
+            }
+
             fetch('/post.php', {
                 method: 'POST',
                 body: formData,
                 headers: {
                     'Access-Control-Allow-Origin': "*"
                 }
-            }).then(response => response.json())
+            }).then(response => {
+                for (let i = 0; i < elementsFirstForm.length; i++) {
+                    elementsFirstForm[i].removeAttribute('disabled');
+                    this.button.classList.remove('_disabled');
+                }
+                for (let i = 0; i < elementsSecondForm.length; i++) {
+                    elementsSecondForm[i].removeAttribute('disabled');
+                    this.button.classList.remove('_disabled');
+                }
+
+                    return response.json()
+                })
                 .then(data => {
 
                     var orderNumberElement = document.querySelector('.__js__order-number');
@@ -402,6 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(err);
                 })
         }
+
 
         hideModal() {
             this.modalThanks.addEventListener('click', (e) => {
