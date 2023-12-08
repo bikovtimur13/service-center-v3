@@ -1,11 +1,11 @@
 <?php
 header('Content-Type: application/json');
-//test
-//if ($_SERVER['HTTP_REFERER'] != "https://yamaguchi-service-moskva.ru/") {
-//    header("HTTP/1.0 403 Forbidden");
-//    echo "Доступ запрещен";
-//    exit;
-//}
+
+if ($_SERVER['HTTP_REFERER'] != "https://yamaguchi-service-moskva.ru/") {
+    header("HTTP/1.0 403 Forbidden");
+    echo "Доступ запрещен";
+    exit;
+}
 
 $blobinfo = md5(date('Y-m') . "77_JSKjmk.m#");
 $url = 'https://orders.borboza.com/site/service2023/new-service-task/blobinfo/' . $blobinfo;
@@ -32,9 +32,8 @@ $options = [
 ];
 $context = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
-
-if (($response)) {
-    echo json_encode(['id' => $response]);
+if ($response) {
+    echo json_encode(["id" => "$response"]);
 } else {
     echo false;
 }
