@@ -40,7 +40,7 @@
       <nav class="header-fixed__menu container-box">
         <ul class="header-fixed__menu-list">
           <li class="header-fixed__menu-item">
-            <a href="/pages/contacts.html">Контакты</a>
+            <a href="#contacts">Контакты</a>
           </li>
           <li class="header-fixed__menu-item">
             <a href="/pages/guarantees.html">Гарантии</a>
@@ -113,7 +113,7 @@
             <nav class="header__menu container-box">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a class="header__a-js" href="/pages/contacts.html">Контакты</a>
+                        <a class="header__a-js" href="#contacts">Контакты</a>
                     </li>
                     <li class="header__menu-item">
                         <a class="header__a-js" href="/pages/guarantees.html">Гарантии</a>
@@ -191,19 +191,19 @@
                 <div class="js-menu__mob-list">
                     <ul>
                         <li class="js-menu__mob-item">
-                            <a href="#">Контакты</a>
+                            <a class="scrollButton" href="#contacts">Контакты</a>
                         </li>
                         <li class="js-menu__mob-item">
-                            <a href="#">Гарантии</a>
+                            <a href="/pages/guarantees.html">Гарантии</a>
                         </li>
                         <li class="js-menu__mob-item">
                             <a  href="/pages/traid-in.html">Trade-in</a>
                         </li>
                         <li class="js-menu__mob-item">
-                            <a href="#">Доставка</a>
+                            <a href="/pages/delivery.html">Доставка</a>
                         </li>
                         <li class="js-menu__mob-item">
-                            <a  href="#">О нас</a>
+                            <a  href="/pages/about.html">О нас</a>
                         </li>
                     </ul>
                     <!-- <img class="js-menu__mob-img" class="" src="/assets/images/main-page/arrow.webp" alt=""> -->
@@ -211,264 +211,267 @@
         </div>
     </div>
     <main class="main-wrapper"> 
-        <section class="service-center">
-            <picture class="service-center__bg">
-                <!-- <source srcset="../assets/images/main-page/bg-img-main-mobile_result.webp" media="(max-width: 767px)"> -->
-                <!-- <img src="/assets/images/main-page/bg-img.webp" alt="фоновое изображение"> -->
-            </picture>
-            <div class="service-center__content container-box">
-                <div class="service-center__title-group">
-                    <img class="service-center__logo" src="/assets/images/main-page/logo.svg" alt="Логотип Yamaguchi">
-                    <div class="service-center__title"> 
-                        <h1 class="service-center__subtitle-h1">официальный<br>сервис-центр<br></h1>
-                        <p class="service-center__subtitle-p">Мы&nbsp;ремонтируем</p>
-                    </div>
-                </div> 
-                <ul class="service-center__list">
-                    <li>
-                        <a>Беговые дорожки</a>
-                    </li> 
-                    <li>
-                        <a>Массажные кресла</a>
-                    </li> 
-                    <li>
-                        <a>Массажеры</a>
-                    </li>
-                    <li>
-                        <a>Фитнес-тренажеры</a>
-                    </li>
-                </ul>
-                <form class="service-center__form">
-                    <div class="__js__input-wrapper">
-                        <input class="service-center__input __js__input service-center__name" type="text" name="name" placeholder="Имя" required pattern="[A-Za-zА-яа-я]{2,}">
-                        <p class="__js__err service-center__err">Пожалуйста, введите имя</p>
-                    </div>
-                    <div class="__js__input-wrapper">
-                        <input  class="service-center__input __js__input" type="tel" placeholder="Телефон для связи" name="tel" required pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
-                        <p  class="__js__err service-center__err">Пожалуйста, введите номер телефона</p>
-                    </div>
-                    <div class="__js__input-wrapper">
-                        <input  class="service-center__input __js__input" type="email" placeholder="e-mail" name="email" pattern="\S+\.[a-z]{2,4}$"  required>
-                        <p  class="__js__err service-center__err">Введите корректный адрес электронной почты</p>
-                    </div>
-                    <textarea class="__js__input  service-center__input service-center__textarea" name="message" placeholder="Модель оборудования и симптомы поломки"></textarea>
-                    <button  class="service-center__button _disabled" type="button">Отправить заявку</button>
-                </form>
-            </div>
-        </section>
-        <section class="services">
-            <div class="services__content container-box">
-                <h2 class="services__title">Мы&nbsp;обслуживаем</h2>
-                <ul class="services__list">
-                    <li class="services__item services__item_armchairs">
-                        <a>
-                            <p>
-                                Массажное оборудование
-                            </p>
-                        </a>
-                    </li>
-                    <li class="services__item services__item_simulators">
-                        <a>
-                            <p class="services__item">
-                                Фитнес-тренажеры
-                            </p>
-                        </a>
-                    </li>
-                    <li class="services__item services__item_massagers">
-                        <a>
-                            <p class="services__item">
-                                Массажеры
-                            </p>
-                        </a>
-                    </li>
-                    <li class="services__item services__item_treadmills">
-                        <a>
-                            <p>Беговые дорожки</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="two-sections">
-            <section class="advantages">
-                <div class="advantages__content container-box">
-                    <h2 class="advantages__title">преимущества компании</h2>
-                    <h3 class="advantages__subtitle">Качественное сервисное обслуживание <br> проданного оборудования от&nbsp;производителя</h3>
-                    <ul class="advantages__list">
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                                <img src="/assets/images/main-page/wrench.svg" alt="ключ">
-                                <h4>Диагностика и ремонт</h4>
-                            </div>
-                            <p class="advantages__text">Диагностика и ремонт массажного <br> оборудования, включая выявление<br>и исправление всех видов неисправностей</p>
+        <section class="three-sections">
+            <section class="service-center">
+                <picture class="service-center__bg">
+                    <!-- <source srcset="../assets/images/main-page/bg-img-main-mobile_result.webp" media="(max-width: 767px)"> -->
+                    <!-- <img src="/assets/images/main-page/bg-img.webp" alt="фоновое изображение"> -->
+                </picture>
+                <div class="service-center__content container-box">
+                    <div class="service-center__title-group">
+                        <img class="service-center__logo" src="/assets/images/main-page/logo.svg" alt="Логотип Yamaguchi">
+                        <div class="service-center__title"> 
+                            <h1 class="service-center__subtitle-h1">официальный<br>сервис-центр<br></h1>
+                            <p class="service-center__subtitle-p">Мы&nbsp;ремонтируем</p>
+                        </div>
+                    </div> 
+                    <ul class="service-center__list">
+                        <li>
+                            <a>Беговые дорожки</a>
+                        </li> 
+                        <li>
+                            <a>Массажные кресла</a>
+                        </li> 
+                        <li>
+                            <a>Массажеры</a>
                         </li>
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                                <img src="/assets/images/main-page/Pencil_Alt.svg" alt="карандаш">
-                                <h4>Консультация</h4>
-                            </div>
-                            <p class="advantages__text">Консультация по эксплуатации оборудования,<br> включая рекомендации по правильному <br> использованию, уходу и обслуживанию</p>
-                        </li>
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                            <img src="/assets/images/main-page/Exchange.svg" alt="замена">
-                                <h4>Замена</h4>
-                            </div>
-                            <p class="advantages__text">Замена деталей<br>
-                                и комплектующих</p>
-                        </li>
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                                <img src="/assets/images/main-page/settings.svg" alt="шестеренка">
-                                <h4>Официальный сервис</h4>
-                            </div>
-                            <p class="advantages__text">Собственный гарантийный <br> и&nbsp;постгарантийный сервис в&nbsp; каждом  <br>городе.</p>
-                        </li>
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                                <img src="/assets/images/main-page/delivery.svg" alt="доставка">
-                                <h4>Доставка</h4>
-                            </div>
-                            <p class="advantages__text">Собственная доставка <br>  с&nbsp;оперативным   таймингом  <br>и&nbsp;компетентными курьерами.</p>
-                        </li>
-                        <li class="advantages__item">
-                            <div class="advantages__item-subtitle">
-                                <div class="advantages__img">
-                                    <picture>
-                                        <source srcset="../assets/images/main-page//product-mobile.svg" media="(max-width: 767px)">
-                                        <img src="/assets/images/main-page/product.svg" alt="продукт">
-                                    </picture>
-                                </div>
-                                <h4>Гарантия на продукцию</h4>
-                            </div>
-                            <p class="advantages__text">Продукция бренда удобная, <br> функциональная, компактная и&nbsp; <br>надежная.</p>
+                        <li>
+                            <a>Фитнес-тренажеры</a>
                         </li>
                     </ul>
+                    <form class="service-center__form">
+                        <div class="__js__input-wrapper">
+                            <input class="service-center__input __js__input service-center__name" type="text" name="name" placeholder="Имя" required pattern="[A-Za-zА-яа-я]{2,}">
+                            <p class="__js__err service-center__err">Пожалуйста, введите имя</p>
+                        </div>
+                        <div class="__js__input-wrapper">
+                            <input  class="service-center__input __js__input" type="tel" placeholder="Телефон для связи" name="tel" required pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                            <p  class="__js__err service-center__err">Пожалуйста, введите номер телефона</p>
+                        </div>
+                        <div class="__js__input-wrapper">
+                            <input  class="service-center__input __js__input" type="email" placeholder="e-mail" name="email" pattern="\S+\.[a-z]{2,4}$"  required>
+                            <p  class="__js__err service-center__err">Введите корректный адрес электронной почты</p>
+                        </div>
+                        <textarea class="__js__input  service-center__input service-center__textarea" name="message" placeholder="Модель оборудования и симптомы поломки"></textarea>
+                        <button  class="service-center__button _disabled" type="button">Отправить заявку</button>
+                    </form>
                 </div>
             </section>
-            <section class="order">
-            <div class="container-box">
-                <h2 class="order__title">Порядок действий <span>при проведении ремонта техники</span></h2>
-                <div class="order__content ">
-                    <div class="order__content-wrapper">
-                        <div class="order__list">
-                            <ol >
-                                <li class="order__item">
-                                    <span class="order__item__title">Заявка и&nbsp;создание заявки:</span>
-                                    <span class="order__item-info">Клиент оставляет заявку на&nbsp;сайте или по&nbsp;телефону для
-                                        ремонта <br> массажного кресла.</span> 
-                                </li>
-                                <li class="order__item">
-                                    <span class="order__item__title">Доставка кресла в&nbsp;сервисный центр:</span> 
-                                    <ul class="order__item__list">
-                                        <li>
-                                            Клиент может самостоятельно привезти кресло
-                                            в&nbsp;сервисный центр <br> или воспользоваться услугами доставки. 
-                                        </li>
-                                        <li>
-                                            Если ваше кресло находится в&nbsp;гарантийном периоде,
-                                            то&nbsp;выезд и&nbsp; <br>диагностика проводятся бесплатно.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="order__item">
-                                   <span class="order__item__title">Диагностика и&nbsp;согласование стоимости ремонта:</span> 
-                                   <ul  class="order__item__list">
-                                        <li>
-                                            После получения кресла нашими специалистами, 
-                                            мы&nbsp;связываемся с&nbsp; <br> клиентом, для согласования стоимости
-                                            ремонта, если случай не&nbsp; <br> является гарантийным.
-                                        </li>
-                                        <li>
-                                            После согласования, цены на&nbsp;услуги и&nbsp;запчасти
-                                            не&nbsp;меняются.
-                                        </li>
-                                   </ul>
-                                </li>
-                                <li class="order__item">
-                                    <span class="order__item__title">Ремонт и&nbsp;выдача:</span> 
-                                    <ul class="order__item__list">
-                                        <li>
-                                            Когда ремонт будет завершен, кресло будет помещено
-                                            на&nbsp;полку для <br> выдачи.
-                                        </li>
-                                        <li>
-                                            Если клиент оставляет заявку на&nbsp;доставку, мы&nbsp;согласуем
-                                            дату <br> доставки на&nbsp;следующий день после готовности
-                                            ремонта.
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ol>
-                        </div>
-                        <picture class="order__image">
-                            <source srcset="/assets/images/main-page/main_order_img_mob.png" media="(max-width: 768px)">
-                            <img src="/assets/images/main-page/order-treadmills_result.webp" alt="Беговые дорожки">
-                        </picture>
+                <section class="services">
+                    <div class="services__content container-box">
+                        <h2 class="services__title">Мы&nbsp;обслуживаем</h2>
+                        <ul class="services__list">
+                            <li class="services__item services__item_armchairs">
+                                <a>
+                                    <p>
+                                        Массажное оборудование
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="services__item services__item_simulators">
+                                <a>
+                                    <p class="services__item">
+                                        Фитнес-тренажеры
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="services__item services__item_massagers">
+                                <a>
+                                    <p class="services__item">
+                                        Массажеры
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="services__item services__item_treadmills">
+                                <a>
+                                    <p>Беговые дорожки</p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="order__text">Благодарим за&nbsp;выбор нашего сервисного центра Yamaguchi. Если у&nbsp;вас возникнут дополнительные вопросы, <br> пожалуйста, свяжитесь с&nbsp;нами. <span>Мы&nbsp;всегда готовы помочь вам.</span> </p>
-                </div>
-                <div class="order__content-mobile ">
-                    <div class="order__content-wrapper">
-                        <div class="order__list">
-                            <ol >
-                                <li class="order__item">
-                                    <span class="order__item__title">Заявка и&nbsp;создание заявки:</span>
-                                    <span class="order__item-info">Клиент оставляет заявку на&nbsp;сайте <br> или по&nbsp;телефону для
-                                        ремонта <br> массажного кресла.</span> 
-                                </li>
-                                <li class="order__item">
-                                    <span class="order__item__title">Доставка кресла в&nbsp;сервисный центр:</span> 
-                                    <ul class="order__item__list">
-                                        <li>
-                                            Клиент может самостоятельно привезти кресло
-                                            в&nbsp;сервисный центр или&nbsp;воспользоваться услугами доставки. 
-                                        </li>
-                                        <li>
-                                            Если ваше кресло находится в&nbsp;гарантийном периоде,
-                                            то&nbsp;выезд и&nbsp;диагностика проводятся бесплатно.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="order__item">
-                                   <span class="order__item__title">Диагностика и&nbsp;согласование стоимости ремонта:</span> 
-                                   <ul  class="order__item__list">
-                                        <li>
-                                            После получения кресла нашими специалистами, 
-                                            мы&nbsp;связываемся с&nbsp;клиентом, для согласования стоимости
-                                            ремонта, если случай не&nbsp; <br> является гарантийным.
-                                        </li>
-                                        <li>
-                                            После согласования цены на&nbsp;услуги и&nbsp;запчасти
-                                            не&nbsp;меняются.
-                                        </li>
-                                   </ul>
-                                </li>
-                                <li class="order__item">
-                                    <span class="order__item__title">Ремонт и&nbsp;выдача:</span> 
-                                    <ul class="order__item__list">
-                                        <li>
-                                            Когда ремонт будет завершен, кресло будет помещено
-                                            на&nbsp;полку для <br> выдачи.
-                                        </li>
-                                        <li>
-                                            Если клиент оставляет заявку на&nbsp;доставку, мы&nbsp;согласуем&nbsp;
-                                            дату <br> доставки&nbsp;на следующий день после готовности
-                                            ремонта.
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ol>
-                        </div>
-                        <picture class="order__image">
-                            <source srcset="/assets/images/main-page/main_order_img_mob.png" media="(max-width: 768px)">
-                            <img src="/assets/images/main-page/order-treadmills_result.webp" alt="Беговые дорожки">
-                        </picture>
+                </section>
+            <div class="two-sections">
+                <section class="advantages">
+                    <div class="advantages__content container-box">
+                        <h2 class="advantages__title">преимущества компании</h2>
+                        <h3 class="advantages__subtitle">Качественное сервисное обслуживание <br> проданного оборудования от&nbsp;производителя</h3>
+                        <ul class="advantages__list">
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                    <img src="/assets/images/main-page/wrench.svg" alt="ключ">
+                                    <h4>Диагностика и ремонт</h4>
+                                </div>
+                                <p class="advantages__text">Диагностика и ремонт массажного <br> оборудования, включая выявление<br>и исправление всех видов неисправностей</p>
+                            </li>
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                    <img src="/assets/images/main-page/Pencil_Alt.svg" alt="карандаш">
+                                    <h4>Консультация</h4>
+                                </div>
+                                <p class="advantages__text">Консультация по эксплуатации оборудования,<br> включая рекомендации по правильному <br> использованию, уходу и обслуживанию</p>
+                            </li>
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                <img src="/assets/images/main-page/Exchange.svg" alt="замена">
+                                    <h4>Замена</h4>
+                                </div>
+                                <p class="advantages__text">Замена деталей<br>
+                                    и комплектующих</p>
+                            </li>
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                    <img src="/assets/images/main-page/settings.svg" alt="шестеренка">
+                                    <h4>Официальный сервис</h4>
+                                </div>
+                                <p class="advantages__text">Собственный гарантийный <br> и&nbsp;постгарантийный сервис в&nbsp; каждом  <br>городе.</p>
+                            </li>
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                    <img src="/assets/images/main-page/delivery.svg" alt="доставка">
+                                    <h4>Доставка</h4>
+                                </div>
+                                <p class="advantages__text">Собственная доставка <br>  с&nbsp;оперативным   таймингом  <br>и&nbsp;компетентными курьерами.</p>
+                            </li>
+                            <li class="advantages__item">
+                                <div class="advantages__item-subtitle">
+                                    <div class="advantages__img">
+                                        <picture>
+                                            <source srcset="../assets/images/main-page//product-mobile.svg" media="(max-width: 767px)">
+                                            <img src="/assets/images/main-page/product.svg" alt="продукт">
+                                        </picture>
+                                    </div>
+                                    <h4>Гарантия на продукцию</h4>
+                                </div>
+                                <p class="advantages__text">Продукция бренда удобная, <br> функциональная, компактная и&nbsp; <br>надежная.</p>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="order__text">Благодарим за&nbsp;выбор нашего <br> сервисного&nbsp;центра&nbsp;Yamaguchi. Если&nbsp;у&nbsp;вас&nbsp;возникнут дополнительные вопросы, <br> пожалуйста, свяжитесь с&nbsp;нами. <span>Мы&nbsp;всегда готовы помочь вам.</span> </p>
+                </section>
+                <section class="order">
+                <div class="container-box">
+                    <h2 class="order__title">Порядок действий <span>при проведении ремонта техники</span></h2>
+                    <div class="order__content ">
+                        <div class="order__content-wrapper">
+                            <div class="order__list">
+                                <ol >
+                                    <li class="order__item">
+                                        <span class="order__item__title">Заявка и&nbsp;создание заявки:</span>
+                                        <span class="order__item-info">Клиент оставляет заявку на&nbsp;сайте или по&nbsp;телефону для
+                                            ремонта <br> массажного кресла.</span> 
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Доставка кресла в&nbsp;сервисный центр:</span> 
+                                        <ul class="order__item__list">
+                                            <li>
+                                                Клиент может самостоятельно привезти кресло
+                                                в&nbsp;сервисный центр <br> или воспользоваться услугами доставки. 
+                                            </li>
+                                            <li>
+                                                Если ваше кресло находится в&nbsp;гарантийном периоде,
+                                                то&nbsp;выезд и&nbsp; <br>диагностика проводятся бесплатно.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Диагностика и&nbsp;согласование стоимости ремонта:</span> 
+                                        <ul  class="order__item__list">
+                                            <li>
+                                                После получения кресла нашими специалистами, 
+                                                мы&nbsp;связываемся с&nbsp; <br> клиентом, для согласования стоимости
+                                                ремонта, если случай не&nbsp; <br> является гарантийным.
+                                            </li>
+                                            <li>
+                                                После согласования, цены на&nbsp;услуги и&nbsp;запчасти
+                                                не&nbsp;меняются.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Ремонт и&nbsp;выдача:</span> 
+                                        <ul class="order__item__list">
+                                            <li>
+                                                Когда ремонт будет завершен, кресло будет помещено
+                                                на&nbsp;полку для <br> выдачи.
+                                            </li>
+                                            <li>
+                                                Если клиент оставляет заявку на&nbsp;доставку, мы&nbsp;согласуем
+                                                дату <br> доставки на&nbsp;следующий день после готовности
+                                                ремонта.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                            <picture class="order__image">
+                                <source srcset="/assets/images/main-page/main_order_img_mob.png" media="(max-width: 768px)">
+                                <img src="/assets/images/main-page/order-treadmills_result.webp" alt="Беговые дорожки">
+                            </picture>
+                        </div>
+                        <p class="order__text">Благодарим за&nbsp;выбор нашего сервисного центра Yamaguchi. Если у&nbsp;вас возникнут дополнительные вопросы, <br> пожалуйста, свяжитесь с&nbsp;нами. <span>Мы&nbsp;всегда готовы помочь вам.</span> </p>
+                    </div>
+                    <div class="order__content-mobile ">
+                        <div class="order__content-wrapper">
+                            <div class="order__list">
+                                <ol >
+                                    <li class="order__item">
+                                        <span class="order__item__title">Заявка и&nbsp;создание заявки:</span>
+                                        <span class="order__item-info">Клиент оставляет заявку на&nbsp;сайте <br> или по&nbsp;телефону для
+                                            ремонта <br> массажного кресла.</span> 
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Доставка кресла в&nbsp;сервисный центр:</span> 
+                                        <ul class="order__item__list">
+                                            <li>
+                                                Клиент может самостоятельно привезти кресло
+                                                в&nbsp;сервисный центр или&nbsp;воспользоваться услугами доставки. 
+                                            </li>
+                                            <li>
+                                                Если ваше кресло находится в&nbsp;гарантийном периоде,
+                                                то&nbsp;выезд и&nbsp;диагностика проводятся бесплатно.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Диагностика и&nbsp;согласование стоимости ремонта:</span> 
+                                        <ul  class="order__item__list">
+                                            <li>
+                                                После получения кресла нашими специалистами, 
+                                                мы&nbsp;связываемся с&nbsp;клиентом, для согласования стоимости
+                                                ремонта, если случай не&nbsp; <br> является гарантийным.
+                                            </li>
+                                            <li>
+                                                После согласования цены на&nbsp;услуги и&nbsp;запчасти
+                                                не&nbsp;меняются.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="order__item">
+                                        <span class="order__item__title">Ремонт и&nbsp;выдача:</span> 
+                                        <ul class="order__item__list">
+                                            <li>
+                                                Когда ремонт будет завершен, кресло будет помещено
+                                                на&nbsp;полку для <br> выдачи.
+                                            </li>
+                                            <li>
+                                                Если клиент оставляет заявку на&nbsp;доставку, мы&nbsp;согласуем&nbsp;
+                                                дату <br> доставки&nbsp;на следующий день после готовности
+                                                ремонта.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                            <picture class="order__image">
+                                <source srcset="/assets/images/main-page/main_order_img_mob.png" media="(max-width: 768px)">
+                                <img src="/assets/images/main-page/order-treadmills_result.webp" alt="Беговые дорожки">
+                            </picture>
+                        </div>
+                        <p class="order__text">Благодарим за&nbsp;выбор нашего <br> сервисного&nbsp;центра&nbsp;Yamaguchi. Если&nbsp;у&nbsp;вас&nbsp;возникнут дополнительные вопросы, <br> пожалуйста, свяжитесь с&nbsp;нами. <span>Мы&nbsp;всегда готовы помочь вам.</span> </p>
+                    </div>
                 </div>
+                </section>
             </div>
-            </section>
+
         </section>
         <section class="details" id="details">
             <div class="details__content container-box details__container-box">
@@ -594,7 +597,7 @@
                             </ol>
                         </div>
                     </section>
-                    <section class="contacts">
+                    <section class="contacts" id="contacts">
                         <div class="contacts__wrapper container-box">
                             <div class="contacts__brands contacts__white-bgc">
                                 <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
@@ -667,7 +670,7 @@
                     </div>
                     <nav class="footer__menu">
                         <ul  class="footer__menu-list">
-                            <li><a class="footer__text" href="/pages/contacts.html">Контакты</a></li>
+                            <li><a class="footer__text" href="#contacts">Контакты</a></li>
                             <li><a class="footer__text" href="/pages/guarantees.html">Гарантии</a></li>
                             <li><a class="footer__text" href="/pages/traid-in.html"> Trade-in</a></li>
                             <li><a class="footer__text" href="/pages/delivery.html">Доставка</a></li>

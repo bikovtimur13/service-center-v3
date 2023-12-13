@@ -25,6 +25,10 @@ body {
   border-radius: 2px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header-fixed.hide-header {
   /* transform: translateY(200px); */
   position: fixed;
@@ -560,18 +564,22 @@ body {
   }
 }
 
+.three-sections {
+    background: url('/assets/images/main-page/bg-img-three-sections_result.webp');
+    background-size: cover;
+
+    @include nsm {
+      background: none;
+    }
+}
+
 .service-center {
   padding: 10px 0 1px;
   margin: -110px 0 0;
   position: relative;
 
-  background: url('/assets/images/main-page/bg-img_result.webp') no-repeat
-    center;
-  background-size: cover;
-
   @include nsm {
-    background: url('/assets/images/main-page/bg-img-main-mobile_result.webp')
-      no-repeat center;
+    background: url('/assets/images/main-page/bg-img-service-center-mobile_result.webp');
     background-size: cover;
   }
 
@@ -1318,7 +1326,16 @@ body {
   }
 }
 
+.two-sections {
+  background: url('/assets/images/main-page/bg-img-two-sections-mobile_result.webp')
+  no-repeat center;
+  background-size: cover;
+}
+
+
 .services {
+  display: none;
+
   padding: 44px 0 45px;
   position: relative;
   background-color: #fff;
@@ -1617,11 +1634,6 @@ body {
   //     transform: scale(1.02);
   //     transition: .2S linear;
   // }
-}
-.two-sections {
-  background: url('/assets/images/main-page/bg-img-two-sections_result.webp')
-    no-repeat center;
-  background-size: cover;
 }
 .advantages {
   padding: 46px 0 117px;
@@ -1958,6 +1970,8 @@ body {
   }
 
   &__image::before {
+    display: none;
+
     content: '';
     background: url(/assets/images/main-page/order-treadmills-lines.svg)
       no-repeat;
@@ -1973,6 +1987,8 @@ body {
     }
   }
   &__image::after {
+    display: none;
+
     content: '';
     background: url(/assets/images/main-page/order-treadmills-lines.svg)
       no-repeat;
@@ -2561,7 +2577,7 @@ body {
 }
 
 .two-sections2 {
-  background: url('/assets/images/main-page/bg-img-two-sections2_result.webp')
+  background: url('/assets/images/main-page/bg-img-two-sections2-2_result.webp')
     no-repeat center;
   background-size: cover;
 
@@ -2571,7 +2587,7 @@ body {
 }
 
 .faq {
-  padding: 54px 0 170px;
+  padding: 54px 0 100px;
   font-family: 'Gilroy';
 
   @include nmd {
@@ -2723,6 +2739,7 @@ body {
 }
 
 .contacts {
+    padding-top: 70px;
   @include nsm {
     .container-box {
       padding: 0;

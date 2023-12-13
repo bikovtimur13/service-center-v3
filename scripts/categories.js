@@ -183,3 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     })
+
+
+    
+//Скролл к контактам
+document.querySelectorAll('.scrollButton').forEach(e => {
+  e.addEventListener('click', () => {
+      document.getElementById('contacts').scrollIntoView({
+          behavior: 'smooth'
+          });
+  })
+}) 

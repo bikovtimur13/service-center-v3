@@ -323,3 +323,15 @@ new ValidationForm(document.querySelector('.request__form')).initForm();
 new ValidationForm(document.querySelector('.request__form2')).initForm();
 })
 
+
+
+//Скролл к контактам
+document.querySelectorAll('.scrollButton').forEach(e => {
+  e.addEventListener('click', () => {
+      document.getElementById('contacts').scrollIntoView({
+          behavior: 'smooth'
+          });
+  })
+}) 
+
+
