@@ -2657,12 +2657,15 @@ html {
     }
 
     @include nmd {
-      font-size: 4.375vw;
+      font-size: 3.375vw;
       padding-right: 0px;
 
       br {
         display: block;
       }
+    @include nxs {
+      font-size: 4.375vw;
+    }
     }
 
     // p {
