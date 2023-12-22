@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
           input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
         })
     
-        console.log(this.button)
         this.button.addEventListener('click', (event) => {
             event.preventDefault();
             let isValid = this.form.checkValidity()
