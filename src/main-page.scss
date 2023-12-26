@@ -1327,9 +1327,11 @@ html {
 }
 
 .two-sections {
-  background: url('/assets/images/main-page/bg-img-two-sections-mobile_result.webp')
-  no-repeat center;
-  background-size: cover;
+  @include nsm {
+    background: url('/assets/images/main-page/bg-img-two-sections-mobile_result.webp')
+    no-repeat center;
+    background-size: cover;
+  }
 }
 
 
