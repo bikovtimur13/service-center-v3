@@ -39,6 +39,14 @@ html {
   @include nmd {
     // display: none;
   }
+
+  @include nsm {
+    height: 13vw;
+  }
+
+  @include nxs {
+    height: 15.5vw;
+  }
 }
 .header-fixed {
   background-color: rgba(72, 52, 82, 0.64);
@@ -56,12 +64,14 @@ html {
     no-repeat center;
   background-size: cover;
 
+
   @include nmd {
     height: clamp(50px, 8vw, 85px);
     background: url('/assets/images/main-page/bg-img-header-mobile_result.webp')
       no-repeat center;
     background-size: cover;
   }
+
 
   &__black-bgc_js {
     background-color: $YBlack;
@@ -201,6 +211,7 @@ html {
       transform: translateX(-50%);
       // padding: 5px 13px 13px 13px;
     }
+    
     // @include nxxs {
     //     margin-top: -8px;
     // }
@@ -214,6 +225,18 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+
+    @include nsm {
+      background: url('/assets/images/main-page/menu-burger.svg') no-repeat;
+      background-size: cover;
+      height: 5vw;
+      width: 7vw;
+    }
+
+    span {
+      display: none;
+    }
+    
   }
   &__menu-burger.hide-burger-fixed {
     display: none;
@@ -351,9 +374,12 @@ html {
     display: flex;
     align-items: center;
 
+    @include nsm {
+    }
+
     img {
-      @include nxxs {
-        max-width: 169px;
+      @include nsm {
+        width: 53vw;
       }
     }
   }
@@ -382,6 +408,7 @@ html {
   }
 
   &__menu-burger {
+    content: '';
     width: 22px;
     height: 22px;
     position: relative;
@@ -390,6 +417,14 @@ html {
     justify-content: flex-start;
     align-items: flex-end;
     margin-top: 8px;
+
+    @include nsm {
+      background: url('/assets/images/main-page/menu-burger.svg') no-repeat;
+      background-size: cover;
+      height: 5vw;
+      width: 7vw;
+      margin-top: 0px;
+    }
   }
 
   &__line-1 {
@@ -398,6 +433,10 @@ html {
     height: 2px;
     background-color: $YRealWhite;
     margin-bottom: 4px;
+
+    @include nsm {
+      display: none;
+    }
   }
 
   &__line-2 {
@@ -406,6 +445,9 @@ html {
     height: 2px;
     background-color: $YRealWhite;
     margin-bottom: 4px;
+    @include nsm {
+      display: none;
+    }
   }
 
   &__line-3 {
@@ -415,6 +457,9 @@ html {
     background-color: $YRealWhite;
     margin-bottom: 4px;
     text-align: right;
+    @include nsm {
+      display: none;
+    }
   }
 }
 
@@ -592,6 +637,11 @@ html {
   &__top-a {
     font-size: clamp(16.66px, 2vw, 34.813px);
     font-weight: 700;
+
+    @include nsm {
+      font-size: 4.5vw;
+      letter-spacing: 1.3px;
+    }
   }
 
   &__current-city {
@@ -612,12 +662,7 @@ html {
     }
     @include nsm {
       padding-bottom: 16px;
-    }
-    @include nxs {
-      margin-top: 183px;
-    }
-    @include nxxs {
-      margin-top: 129px;
+      margin-top: 40vw;
     }
   }
 
@@ -625,7 +670,7 @@ html {
     font-family: $font-petrov;
     font-style: normal;
     font-weight: 700;
-    font-size: Clamp(25px, 2vw, 56.94px);
+    font-size: Clamp(40px,2.0vw,54.94px);
     line-height: 106.5%;
     text-transform: uppercase;
     color: $YRealWhite;
@@ -642,9 +687,10 @@ html {
     }
 
     @include nsm {
-      max-width: 400px;
+      max-width: 94vw;
       margin: 0 auto;
       padding: 0px 0px 25px;
+      font-size: 5.5vw;
     }
 
     @include nxxs {
@@ -657,6 +703,10 @@ html {
     max-width: clamp(70px, 14vw, 198px);
     width: 100%;
     margin-right: 35.68px;
+
+    @include nsm {
+      max-width: 22vw;
+    }
 
     @include nxs {
       margin-right: 12px;
@@ -735,6 +785,7 @@ html {
     }
     @include nsm {
       margin-left: 0px;
+      font-size: 4.3vw;
     }
 
     &:hover {
@@ -750,9 +801,14 @@ html {
       // margin-right: 13px;
       max-height: 31px;
 
-      @include nxxs {
-        content: url('/assets/images/main-page/location-mobile.svg');
-        margin-right: 4px;
+      @include nsm {
+        margin-right: 3.3vw;
+        max-height: 100%;
+        content: '';
+        background: url('/assets/images/main-page/location.svg');
+        background-size: cover;
+        height: 5vw;
+        width: 4vw;
       }
     }
 
@@ -762,10 +818,15 @@ html {
       transform: rotate(0deg);
       max-height: 24px;
 
-      @include nxxs {
-        content: url('/assets/images/main-page/arrow-down-mobile.svg');
-        max-height: 17px;
-        margin-left: 9px;
+      @include nsm {
+        margin-left: 4vw;
+        content: '';
+        background: url('/assets/images/main-page/arrow-down.svg') no-repeat ;
+        background-size: cover;
+        transform: rotate(0deg);
+        height: 5.5vw;
+        width: 5.5vw;
+        max-height: 100%;
       }
     }
   }
@@ -840,6 +901,10 @@ html {
     position: static;
     width: fit-content;
     padding-top: 43px;
+
+    @include nsm {
+      padding-top: 15vw;
+    }
   }
 
   &__mobile_js {
@@ -930,10 +995,14 @@ html {
     padding-top: 14.64px;
   }
   &__subtitle-p {
-    font-size: clamp(14px, 4vw, 39.8px);
+    font-size: clamp(19px,3vw,39.8px);
     font-weight: 200;
     line-height: 100%;
     padding: 8.82px 0px 0px 4.57px;
+
+    @include nsm {
+      font-size: 3.99vw;
+    }
 
     @include nxxs {
       padding: 3px 0 0 1px;
@@ -1007,7 +1076,7 @@ html {
     @include nsm {
       grid-template-columns: 1fr;
       grid-template-rows: none;
-      max-width: 400px;
+      max-width: 93vw;
       li:nth-child(1) {
         order: 3;
       }
@@ -1058,6 +1127,7 @@ html {
 
         @include nsm {
           text-transform: math-auto;
+          font-size: 5vw;
         }
       }
 
@@ -1074,8 +1144,8 @@ html {
         );
         box-shadow: 0px 17.58308px 17.58308px 0px rgba(0, 0, 0, 0.05);
       }
-      @include nxxs {
-        height: 40px;
+      @include nsm {
+        height: 12.5vw;
       }
     }
   }
@@ -1100,7 +1170,7 @@ html {
     }
 
     @include nsm {
-      max-width: 400px;
+      max-width: 94vw;
       margin: 0 auto;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -1114,7 +1184,7 @@ html {
     }
 
     @include nxxs {
-      gap: 6px 8px;
+      gap: 6.5px 8px;
     }
   }
 
@@ -1178,7 +1248,8 @@ html {
 
     @include nsm {
       border-radius: 8px;
-      height: 36px;
+      height: 11.3vw;
+      font-size: 5.3vw;
     }
     @include nxxs {
       margin-top: 2px;
@@ -1201,11 +1272,19 @@ html {
       color: #808080;
       font-size: Clamp(12px, 2vw, 21px);
       font-weight: 300;
+
+      @include nsm {
+        font-size: 3.5vw;
+
+      }
+      @include nxs {
+        transform:translateY(0)
+      }
     }
 
     @include nsm {
       border-radius: 8px;
-      height: 36px;
+      height: 11vw;
     }
 
     @include nxxs {
@@ -2010,7 +2089,7 @@ html {
     font-family: $font-petrov;
     font-weight: 900;
     // font-size: Clamp(14px, 3vw, 39.258px);
-    font-size: Clamp(26.984px, 3vw, 39.258px);
+    font-size: Clamp(26.984px, 2.3vw, 39.258px);
     line-height: 114.5%;
     color: $YRealWhite;
     text-transform: uppercase;
@@ -2312,7 +2391,7 @@ html {
       text-align: left;
       font-family: $font-petrov;
       font-weight: 400;
-      font-size: Clamp(40px, 5vw, 93px);
+      font-size: Clamp(40px, 6vw, 93px);
       line-height: 88%;
       color: $YSovsemBlack;
       margin-right: 13px;
@@ -2608,7 +2687,7 @@ html {
   &__title {
     font-family: $font-petrov;
     font-weight: 400;
-    font-size: clamp(50px, 5vw, 93.032px);
+    font-size: clamp(50px, 6vw, 93.032px);
     line-height: 88%;
     text-transform: uppercase;
     color: $YRealWhite;
@@ -2625,7 +2704,7 @@ html {
     font-family: $font-petrov;
     margin: 0 91px 0 58px;
 
-    @include nsm {
+    @include nlg {
       margin: 0;
     }
 
@@ -2660,7 +2739,7 @@ html {
 
     @include nmd {
       font-size: 3.375vw;
-      padding-right: 0px;
+      padding-right: 50px;
 
       br {
         display: block;
@@ -3102,6 +3181,13 @@ html {
 
     &:hover {
       color: #5308b6;
+    }
+
+    @include nlg {
+      font-size: 40px;
+    }
+    @include nsm {
+      font-size: 9vw;
     }
 
     @include nmd {
