@@ -1749,7 +1749,7 @@ html {
     }
 
     @include nsm {
-      font-size: clamp(32.543px, 6vw, 50px);
+      font-size: 10.1vw;
       text-align: left;
       margin-bottom: 20px;
 
@@ -1781,7 +1781,7 @@ html {
 
     @include nsm {
       text-align: left;
-      font-size: clamp(13px, 3vw, 40px);
+      font-size: 4vw;
 
       br {
         display: block;
@@ -1925,8 +1925,8 @@ html {
     color: $YRealWhite;
 
     @include nsm {
-      max-width: 474px;
-      font-size: clamp(13px, 3vw, 40px);
+      max-width: 88vw;
+      font-size: 4.1vw;
 
       br {
         display: none;
@@ -1955,12 +1955,13 @@ html {
     display: none;
 
     @include nsm {
-      // font-size: 4.7vw;
+      font-size: 4.7vw;
+      display: block;
+
     }
 
     @include nxxs {
       padding-top: 6px;
-      display: block;
     }
   }
 
@@ -1975,11 +1976,11 @@ html {
 
     @include nsm {
       // font-size: 4.7vw;
+      display: none;
     }
 
     @include nxxs {
       padding-top: 6px;
-      display: none;
     }
   }
 
@@ -2100,13 +2101,13 @@ html {
       // font-size: 4.5vw;
       margin-bottom: 0;
       padding-top: 0px;
+      font-size: 8.4vw;
+      span {
+        font-size: 4.6vw;
+      }
     }
     @include nxs {
-      max-width: 300px;
       line-height: 21px;
-      span {
-        font-size: 14.853px;
-      }
     }
   }
 
@@ -2166,11 +2167,10 @@ html {
       font-weight: 800;
       line-height: 32px;
 
-      @include nmd {
-        margin-bottom: 2%;
+      @include nsm {
+        margin-bottom: 5.7vw;
       }
       @include nxxs {
-        margin-bottom: 18.5px;
         line-height: 160%;
         max-width: 278px;
       }
@@ -2379,9 +2379,14 @@ html {
     // }
 
     //mobile
+
+    @include nsm {
+      span {
+        font-size: 12.4vw;
+      }
+    }
     @include nxs {
       span {
-        font-size: 39.75px;
         margin-top: -5px;
         display: block;
       }
@@ -2398,7 +2403,7 @@ html {
       margin-top: 10px;
 
       @include nsm {
-        font-size: 59.303px;
+        font-size: 18.5vw;
         margin: 0 auto;
         text-align: center;
       }
@@ -2694,9 +2699,9 @@ html {
     margin-bottom: 70px;
     text-align: center;
 
-    @include nxs {
+    @include nsm {
       font-size: 12vw;
-      margin-bottom: 27px;
+      margin-bottom: 9.8vw;
     }
   }
 

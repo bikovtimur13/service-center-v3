@@ -87,14 +87,13 @@
             "phone"
             "hours"
             " cards";
-            grid-row-gap: 16px;
             justify-items: center;
             text-align: center;
+            grid-row-gap: 7.5vw;
         }
 
         @include nxs {
             padding-bottom: 42px;
-            grid-row-gap: 24px;
         }
     }
 
@@ -120,9 +119,14 @@
         @include nmd {
             padding-left: 0px;
         }
+        @include nsm {
+            font-size: 6.2vw;
+            line-height: 8vw;
+        }
         @include nxs {
             padding-top: 5px;
         }
+
         
         a {
             transition: all .2s;
@@ -162,6 +166,10 @@
         line-height: 160.86%;
         text-transform: uppercase;
         color: $YRealWhite;
+
+        @include nsm {
+            font-size: 6.88vw;
+        }
         
     }
 
