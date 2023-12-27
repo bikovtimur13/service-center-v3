@@ -2201,9 +2201,5 @@ body {
 .footer {
     background: url("/assets/images/main-page/bg-img-trande-in-footer_result.webp") no-repeat center;
     background-size: cover;
-
-    @include nsm {
-        display: none;
-    }
 }
 
