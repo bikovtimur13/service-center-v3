@@ -375,6 +375,10 @@ body {
             line-height: 110%;
             margin-top: 30px;
             margin-bottom: 18px;
+
+            @include nsm {
+                font-size: 7.8vw;
+            }
         }
 
         .request__form__btn {
