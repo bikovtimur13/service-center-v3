@@ -1,11 +1,10 @@
 // console.log(title.innerHTML);
 
 document.addEventListener('DOMContentLoaded', () => {
-    let selector = document.querySelector('.service-center__select');
-    let currentCity = selector.textContent;
-    let cityList = document.querySelector('.service-center__city-list');
-    let formCity = document.querySelector('.service-center__choose-city');
-    let wrapper = document.querySelector(('.header__wrapper'));
+    const SELECTED_CITY = document.querySelector('.header__selected-city');
+    let currentCity = SELECTED_CITY.textContent;
+    const CITY_LIST = document.querySelector('.header__city-suggest');
+    let wrapper = document.querySelector('.header__wrapper');
     let header = document.querySelector('.header');
     let cityTitle = document.querySelector('.service-center__city-choice__title');
     let cityHeader = document.querySelector('.service-center__city-choice__header');
@@ -14,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let thanksModal = document.querySelector('.modal-thanks');
     let closeModalBtn = document.querySelector('.modal-thanks__close');
     let body = document.body;
+    const IS_MOBILE = window.matchMedia('(max-width: 767px)').matches;
 
 
     if (localStorage['city']) {
-        selector.textContent = localStorage.getItem('city');
+        SELECTED_CITY.textContent = localStorage.getItem('city');
     }
 
     const mobCities = document.querySelector('.js-cities__mob');
@@ -26,19 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     //city choice
 
     function handleOverLay(event) {
-        if (event.target.classList.contains('service-center__list-item') || event.target === selector) return;
+        if (event.target.classList.contains('service-center__list-item') || event.target === SELECTED_CITY) return;
         close();
     }
 
     function open() {
-        selector.classList.add('_active');
-        cityList.classList.add('_city-list_active');
+        SELECTED_CITY.classList.add('_active');
+        CITY_LIST.classList.add('_city-list_active');
         document.addEventListener('click', handleOverLay);
     }
 
     function close() {
-        selector.classList.remove('_active');
-        cityList.classList.remove('_city-list_active');
+        SELECTED_CITY.classList.remove('_active');
+        CITY_LIST.classList.remove('_city-list_active');
         document.removeEventListener('click', handleOverLay);
     }
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const appendCityList = () => {
-        let list = cityList.cloneNode(true);
+        let list = CITY_LIST.cloneNode(true);
         mobCityList.after(list);
     };
 
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMobCity() {
         document.querySelector('.js-cities__close').addEventListener('click', () => {
             mobCities.classList.remove('js-cities__active');
-            cityList.style.opacity = 0;
-            cityList.style.visibility = 'hidden';
+            CITY_LIST.style.opacity = 0;
+            CITY_LIST.style.visibility = 'hidden';
             body.style.overflow = 'visible';
         })
     }
@@ -78,31 +78,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.service-center__list-item').forEach(e => {
             const city = e;
             city.addEventListener('click', () => {
-                selector.textContent = city.dataset.city;
+                SELECTED_CITY.textContent = city.dataset.city;
                 currentCity = city.dataset.city;
                 localStorage.setItem('city', city.dataset.city);
                 mobCities.classList.remove('js-cities__active');
-                cityList.style.opacity = 0;
-                cityList.style.visibility = 'hidden';
+                CITY_LIST.style.opacity = 0;
+                CITY_LIST.style.visibility = 'hidden';
             })
         })
     }
 
     function checkWindowWidth() {
 
-        if (window.matchMedia('(max-width: 767px)').matches) {
+        if (IS_MOBILE) {
             openMobCity();
             closeMobCity();
             chooseMobCity();
 
         } else {
-            selector.classList.contains('_active') ? close() : open();
+            SELECTED_CITY.classList.contains('_active') ? close() : open();
             chooseCity();
-
         }
     }
 
-    selector.addEventListener('click', () => {
+    SELECTED_CITY.addEventListener('click', () => {
         checkWindowWidth();
     })
 
@@ -110,11 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.service-center__list-item').forEach(e => {
             const city = e;
             city.addEventListener('click', () => {
-                selector.textContent = city.dataset.city;
+                SELECTED_CITY.textContent = city.dataset.city;
                 currentCity = city.dataset.city;
                 localStorage.setItem('city', city.dataset.city);
-                selector.classList.remove('_active');
-                cityList.classList.remove('_city-list_active');
+                SELECTED_CITY.classList.remove('_active');
+                CITY_LIST.classList.remove('_city-list_active');
 
             })
         })
