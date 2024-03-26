@@ -1,24 +1,24 @@
 
 // MIXINS
-@mixin fadeIn($opacity) {
-  opacity: $opacity;
-  transition: opacity 0.25s ease-in;
-  -moz-transition: opacity 0.25s ease-in;
-  -webkit-transition: opacity 0.25s ease-in;
-}
+// @mixin fadeIn($opacity) {
+//   opacity: $opacity;
+//   transition: opacity 0.25s ease-in;
+//   -moz-transition: opacity 0.25s ease-in;
+//   -webkit-transition: opacity 0.25s ease-in;
+// }
 
-@mixin fadeOut($opacity) {
-  opacity: $opacity;
-  transition: opacity 0.25s ease-out;
-  -moz-transition: opacity 0.25s ease-out;
-  -webkit-transition: opacity 0.25s ease-out;
-}
+// @mixin fadeOut($opacity) {
+//   opacity: $opacity;
+//   transition: opacity 0.25s ease-out;
+//   -moz-transition: opacity 0.25s ease-out;
+//   -webkit-transition: opacity 0.25s ease-out;
+// }
 
-@mixin backgroundImageIn() {
-  transition: background-image 0.25s ease-out;
-  -moz-transition: background-image 0.25s ease-out;
-  -webkit-transition: background-image 0.25s ease-out;
-}
+// @mixin backgroundImageIn() {
+//   transition: background-image 0.25s ease-out;
+//   -moz-transition: background-image 0.25s ease-out;
+//   -webkit-transition: background-image 0.25s ease-out;
+// }
 
 $bigScreen-media: 2100px;
 $middleScreen-media: 1800px;
@@ -49,13 +49,8 @@ $xxs-media: 450px;
   }
 }
 
-// @mixin nlg {
-//   @media all and (max-width: 1239px) {
-//     @content;
-//   }
-// }
 @mixin nlg {
-  @media all and (max-width: 1359px) {
+  @media all and (max-width: 1239px) {
     @content;
   }
 }
@@ -65,6 +60,7 @@ $xxs-media: 450px;
     @content;
   }
 }
+
 
 @mixin nmd {
   @media all and (max-width: 1023px) {

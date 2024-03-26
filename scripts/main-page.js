@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cityTitle = document.querySelector('.service-center__city-choice__title');
     let cityHeader = document.querySelector('.service-center__city-choice__header');
     let contactsBtn = document.querySelector('.contacts__button');
-    let serviceBtn = document.querySelector('.service-center__button');
+    let serviceBtn = document.querySelector('.application-form__button');
     let thanksModal = document.querySelector('.modal-thanks');
     let closeModalBtn = document.querySelector('.modal-thanks__close');
     let body = document.body;
@@ -220,25 +220,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function openMobileMenu() {
-        let mobMenu = document.querySelector('.js-menu__mob');
-        let openBtn = document.querySelector('.header__menu-burger');
+        const HEADER = document.querySelector('.header')
+        const MENU_LIST = document.querySelector('.header__menu');
+        const OPEN_ICON = document.querySelector('.header__icon-mob_open');
+        const CLOSE_ICON = document.querySelector('.header__icon-mob_close');
+
         let openBtnFixed = document.querySelector('.header-fixed__menu-burger');
-        let closeBtn = document.querySelector('.js-menu__close');
         let closeBtnFixed = document.querySelector('.js-menu-fixed__close');
         let menuItems = document.querySelectorAll('.js-menu__mob-item');
 
-        openBtn.addEventListener('click', () => {
-            mobMenu.classList.add('js-menu__mob_active');
-            // добавление контактов
+        OPEN_ICON.addEventListener('click', () => {
+            MENU_LIST.classList.add('header__menu_show');
+            OPEN_ICON.classList.add('hide');
+            CLOSE_ICON.classList.remove('hide');
+            HEADER.classList.add('header_green-bg')
             window.removeEventListener('scroll', headerVisibility);
         });
-        closeBtn.addEventListener('click', () => {
-            mobMenu.classList.remove('js-menu__mob_active');
+
+        CLOSE_ICON.addEventListener('click', () => {
+            MENU_LIST.classList.remove('header__menu_show');
+            CLOSE_ICON.classList.add('hide');
+            OPEN_ICON.classList.remove('hide');
+            HEADER.classList.remove('header_green-bg')
             window.addEventListener('scroll', headerVisibility);
         });
 
         openBtnFixed.addEventListener('click', () => {
-            mobMenu.classList.add('js-menu__mob_active');
+            MENU_LIST.classList.add('js-menu__mob_active');
             containHideHeaderRemove();
             window.removeEventListener('scroll', headerVisibility);
             // openBtnFixed.classList.add('hide-burger-fixed');
@@ -246,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         closeBtnFixed.addEventListener('click', () => {
-            mobMenu.classList.remove('js-menu__mob_active');
+            MENU_LIST.classList.remove('js-menu__mob_active');
             window.addEventListener('scroll', headerVisibility);
             openBtnFixed.classList.remove('hide-burger-fixed');
             closeBtnFixed.classList.remove("hide-close-fixed");
@@ -255,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems.forEach(item => {
 
             item.addEventListener('click', () => {
-                mobMenu.classList.remove('js-menu__mob_active');
+                MENU_LIST.classList.remove('js-menu__mob_active');
                 // window.addEventListener('scroll', headerVisibility);
             })
         })
@@ -380,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sendForm(event) {
             let formData = new FormData(this.form);
 
-            const firstForm = document.querySelector('.service-center__form')
+            const firstForm = document.querySelector('.application-form__container-form')
             const secondForm = document.querySelector('.contacts__form')
 
             const elementsFirstForm = firstForm.elements
@@ -445,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     new ValidationForm(document.querySelector('.contacts__form')).initForm();
-    new ValidationForm(document.querySelector('.service-center__form')).initForm();
+    new ValidationForm(document.querySelector('.application-form__form')).initForm();
 
 
 })
