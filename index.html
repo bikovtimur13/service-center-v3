@@ -319,8 +319,8 @@
                     <input 
                         class="application-form__input __js__input" 
                         type="tel" 
-                        placeholder="Телефон для связи" 
                         name="tel"
+                        placeholder="Телефон для связи" 
                         required 
                         pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
                     >
@@ -331,7 +331,7 @@
                     <input 
                         class="application-form__input __js__input" 
                         type="email" 
-                        placeholder="e-mail" 
+                        placeholder="Ваш e-mail" 
                         name="email"
                         pattern="\S+\.[a-z]{2,4}$" 
                         required
@@ -341,6 +341,10 @@
 
                 <div class="application-form__wrapper-data-processing">
                     <input class="application-form__data-processing-checkbox" type="checkbox" required>
+                    <div class="application-form__wrapper-checkbox">
+                        <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt="" class="application-form__img-checkbox application-form__img-checkbox_rejection hide">
+                        <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt="" class="application-form__img-checkbox application-form__img-checkbox_approval">
+                    </div>
                     <label class="application-form__data-processing-text">Я согласен(а) с политикой конфиденциальности и даю согласие на обработку персональных данных</label>
                 </div>
 
@@ -354,6 +358,192 @@
 
             </form>
             
+        </div>
+    </section>
+
+    <section class="trade-in">
+        <div class="trade-in__container-box container-box">
+            <div class="trade-in__wrapper-img">
+                <img class="trade-in__img" src="./assets/images/main-page/yamaguchi-x.webp" alt="">
+            </div>
+            <p class="trade-in__text">Также обменяем Ваше старое массажное кресло на новое со скидкой в Trade-in</p>
+        </div>    
+    </section>
+
+    <section class="details section" id="details">
+        <div class="details__container-box container-box">
+            <h3 class="details__title">Подробно о наших услугах</h3>
+
+            <p class="details__text">Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает долгий срок службы вашего массажного оборудования. Мы понимаем, что каждое устройство имеет свои особенности, поэтому мы оснащены знаниями и опытом для ремонта различных видов и типов массажного оборудования. Независимо от того, является ли вашим оборудованием массажное кресло, массажер, беговая дорожка или <br class="mob-show">фитнес-тренажер, мы обеспечим его полноценное восстановление.</p>
+            <p class="details__text">Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего массажного оборудования Yamaguchi, выявим все неисправности и незамедлительно устраним их. При необходимости мы заменим детали и комплектующие только оригинальными запчастями Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.</p>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="contacts__container-box container-box">
+            <h3 class="contacts__title">Контакты</h3>
+            
+            <div class="contacts__brands contacts_white-bgc">
+                <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
+                <ul class="contacts__brands-list">
+                    <li class="contacts__brands-item contacts__brands-item_yamaguchi">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_yamaguchi.svg" alt="Yamaguchi">
+                    </li>
+                    <li class="contacts__brands-item contacts__brands-item_us-medica">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_usmedico.svg" alt="Us Medica">
+                    </li>
+                    <li class="contacts__brands-item contacts__brands-item_anatomico">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_anatomico.svg" alt="Anatomico">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contacts__hours contacts_white-bgc">
+
+                <h4 class="contacts__subtitle contacts__subtitle_centers">Сервисные центры</h4>
+                <p class="contacts__text">Мы&nbsp;подберем Вам ближайший салон Yamaguchi, где можно сдать технику на&nbsp;диагностику.</p>
+
+                <h4 class="contacts__subtitle  contacts__subtitle_hours"> Время работы</h4>
+                <p class="contacts__text">
+                    Получить консультацию можно по&nbsp;<br class="mob-show">телефону сервисного центра
+                    <a class="contacts__phone-wrapper-anchor" href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
+                    <span class="contacts__hours-string">(пн-пт:&nbsp;с&nbsp;9.00&nbsp;до&nbsp;18.00,&nbsp;сб:&nbsp;9.00-17.00)</span>
+                </p>
+            </div>
+
+            <div class="contacts__trade-in contacts_white-bgc">
+                <h4 class="contacts__subtitle contacts__subtitle_trade-in">Трейд-Ин</h4>
+                <p class="contacts__text"> 
+                    Для оценки Вашего оборудования и условий обмена обращайтесь по телефону 
+                    <a class="contacts__phone-anchor" href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
+                    <span class="contacts__text_bold">.</span> 
+                    <a href="/pages/traid-in.html" class="contacts__link" target="_blank">Подробности&nbsp;на&nbsp;странице <span class="contacts__word-wrap">Trade-in</span></a>
+                </p>
+            </div>
+
+            <div class="contacts__phone contacts_black-bgc">
+                <a class="contacts__phone-anchor contacts__phone-anchor_big-and-white"
+                    href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
+                <div class="contacts__text-block">
+                    <p class="contacts__text-item">Телефон для справок</p>
+                </div>
+            </div>
+
+            <form class="contacts__form">
+
+                <div class="contacts__input-wrapper __js__input-wrapper">
+                    <input 
+                        class="contacts__input __js__input " 
+                        type="text" 
+                        name="name" 
+                        placeholder="Имя"
+                        pattern="[A-Za-zА-яа-я]{2,}" 
+                        required
+                    >
+                    <p class="contacts__err __js__err">Пожалуйста, введите Ваше имя</p>
+                </div>
+
+                <div class="contacts__input-wrapper __js__input-wrapper">
+                    <input 
+                        class="contacts__input __js__input" 
+                        type="tel" 
+                        name="tel" 
+                        placeholder="Телефон для связи"
+                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+                        required
+                    >
+                    <p class="contacts__err __js__err">Пожалуйста, введите номер телефона</p>
+                </div>
+
+                <div class="contacts__input-wrapper __js__input-wrapper">
+                    <input 
+                        class="contacts__input __js__input" 
+                        type="email" 
+                        name="email" 
+                        placeholder="Ваш e-mail"
+                        pattern="\S+\.[a-z]{2,4}$" 
+                        required
+                        >
+                    <p class="contacts__err __js__err">Введите корректный адрес электронной почты</p>
+                </div>
+
+                <textarea 
+                    class="contacts__input-wrapper contacts__input contacts__textarea __js__input"
+                    name="message" 
+                    placeholder="Модель Вашего оборудования, &#10симптомы поломки"
+                ></textarea>
+
+                <button class="contacts__button _disabled " type="submit">Отправить заявку</button>
+            </form>
+
+            <p class="contacts__text-botom">Благодарим за выбор нашего сервисного центра Yamaguchi! Если у вас возникнут дополнительные вопросы, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь вам.</p>
+
+        </div>
+    </section>
+
+    <section class="guarantees">
+        <div class="guarantees__container-box container-box">
+
+            <h3 class="guarantees__title">Гарантии</h3>
+            <p class="guarantees__subtitle">Официальный сервисный центр предлагает своим клиентам гарантийное обслуживание на все модели массажных кресел Yamaguchi.</p>
+
+
+            <div class="guarantees__container-cards">
+                <div class="guarantees__period">
+                    <h4 class="guarantees__period-title">Срок гарантии</h4>
+                    <p class="guarantees__period-text">Стандартная гарантия <br>6 месяцев</p>
+                </div>
+    
+                <div class="guarantees__warranty">
+                    <h4 class="guarantees__warranty-title">Что покрывает гарантия</h4>
+                    <ul class="guarantees__warranty-list">
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_repair">Бесплатный ремонт или замена неисправных деталей</li>
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_diagnostics">Бесплатная диагностика</li>
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_help">Бесплатная выездная техническая помощь (в пределах Москвы и Московской области)</li>
+                    </ul>
+                </div>
+    
+                <div class="guarantees__getting">
+                    <h4 class="guarantees__getting-title">Как получить гарантийное
+                        обслуживание</h4>
+                    <ul class="guarantees__getting-list">
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_application">Оставьте заявку на сайте или свяжитесь с нами по телефону +7&nbsp;(495)&nbsp;123-45-67</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_information">Предоставьте нам информацию о модели вашего кресла</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_problem">Опишите проблему, с которой вы столкнулись</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_agreement">Наш специалист согласует с вами удобное время для визита</li>
+                    </ul>
+                </div>
+    
+                <div class="guarantees__important">
+                    <h4 class="guarantees__important-title">Важно</h4>
+                    <p class="guarantees__important-text">Гарантия аннулируется, если:</p>
+                    <ul class="guarantees__important-list">
+                        <li class="guarantees__important-list-item">Кресло было повреждено в результате механического воздействия</li>
+                        <li class="guarantees__important-list-item">Кресло было отремонтировано не&nbsp;<br class="mob-show">в&nbsp;authorised сервисном<br class="desk-show">центре</li>
+                        <li class="guarantees__important-list-item">Были нарушены правила эксплуатации</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="faq__content container-box">
+            <h3 class="faq__title">Часто задаваемые вопросы</h3>
+            <ul class="faq__list">
+                <li class="faq__item">
+                    <p class="faq__question">Что делать, если я обнаружил неисправность в работе массажного кресла?</p>
+                    <p class="faq__text faq__text_max-width">Свяжитесь с нами по телефону <b class="faq__text-bold">+7 (495)123-45-67</b> или электронной почте [удаленный электронный адрес].</p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question">Сколько стоит ремонт массажного кресла?</p>
+                    <p class="faq__text">Стоимость ремонта зависит от модели кресла ихарактера неисправности. Для точной оценки стоимости ремонта необходимопровести диагностику.</p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question ">Как долго длится гарантийный ремонт?</p>
+                    <p class="faq__text">Срок гарантийного ремонта составляет 14 дней.</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -420,281 +610,143 @@
             </ul>
         </div>
     </section> -->
-
-
-    <section class="details" id="details">
-        <div class="details__content container-box details__container-box">
-            <div class="details__wrapper">
-                <!-- <picture class="details__img">
-                    <source srcset="/assets/images/main-page/drill_mob.png" media="(max-width: 768px)">
-                    <img  src="/assets/images/main-page/img_drill.webp" alt="дрель">
-                </picture> -->
-
-                <h2 class="details__title">Подробно <br> <span>о&nbsp;наших услугах</span></h2>
-                <img class="details__img-mobile" src="/assets/images/main-page/details-img-mobile_result.webp" alt="">
-
-                <p class="details__text_short">
-                    Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает <br> долгий срок
-                    службы вашего массажного оборудования. Мы понимаем, что каждое <br> устройство имеет свои
-                    особенности, поэтому мы оснащены знаниями и опытом для <br> ремонта различных видов и типов
-                    массажного оборудования. Независимо от того, <br> является ли вашим оборудованием массажное
-                    кресло, массажер, беговая дорожка<br> или фитнес-тренажер, мы обеспечим его полноценное
-                    восстановление.
-                <p class="details__text">
-                    Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего
-                    массажного оборудования Yamaguchi, выявим все неисправностии незамедлительно <br> устраним их.
-                    При необходимости мы заменим детали и комплектующие только оригинальными запчастями Yamaguchi,
-                    чтобы гарантировать надежность и долговечность ремонта.
-                </p>
-
-                <div class="details__detailed">
-                    <div class="details__detailed__text">Также обменяем Ваше старое массажное кресло на новое со
-                        скидкой в Trade-in</div>
-
-                </div>
-            </div>
-        </div>
-        <div class="details__content-mobile container-box details__container-box">
-            <div class="details__wrapper">
-                <!-- <picture class="details__img">
-                    <source srcset="/assets/images/main-page/drill_mob.png" media="(max-width: 768px)">
-                    <img  src="/assets/images/main-page/img_drill.webp" alt="дрель">
-                </picture> -->
-
-                <h2 class="details__title">Подробно <br> <span>о&nbsp;наших услугах</span></h2>
-                <img class="details__img-mobile" src="/assets/images/main-page/details-img-mobile_result.webp" alt="">
-
-                <p class="details__text_short">
-                    Наш сервисный центр не только предоставляет ремонтные услуги, но&nbsp;и&nbsp;обеспечивает <br>
-                    долгий срок службы вашего массажного оборудования. Мы&nbsp;понимаем, что каждое <br> устройство
-                    имеет свои особенности, поэтому мы оснащены знаниями и опытом для <br> ремонта различных видов и
-                    типов массажного оборудования. Независимо от того, <br> является ли вашим оборудованием
-                    массажное кресло,&nbsp;массажер, беговая дорожка<br> или фитнес-тренажер, мы&nbsp;обеспечим его
-                    полноценное восстановление.
-                <p class="details__text">
-                    Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего
-                    массажного оборудования Yamaguchi, выявим все неисправностии незамедлительно <br> устраним их.
-                    При&nbsp;необходимости мы заменим детали и&nbsp;комплектующие только оригинальными запчастями
-                    Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.
-                </p>
-
-                <div class="details__detailed">
-                    <div class="details__detailed__text">Также обменяем Ваше старое массажное кресло на новое со
-                        скидкой в Trade-in</div>
-
-                </div>
-            </div>
+    
+    <section class="faq-1">
+        <div class="faq__content container-box">
+            <h3 class="faq__title">Часто задаваемые вопросы</h3>
+            <ul class="faq__list">
+                <li class="faq__item">
+                    <p class="faq__question">Забираем&nbsp;ли мы&nbsp;продукцию&nbsp;у <br> клиента, доставляем
+                        в&nbsp;сервис?</p>
+                    <p class="faq__text faq__answer">Да, мы&nbsp;забираем продукцию у&nbsp;клиента если товар
+                        является крупногабаритным (свыше 5&nbsp;кг) или если это гарантийный случай.</p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question">Стоимость доставки?</p>
+                    <p class="faq__text">
+                        Если товар не&nbsp;является гарантийным и&nbsp;является крупногабаритным (свыше
+                        5&nbsp;кг),
+                        стоимость доставки составляет 800 рублей в&nbsp;пределах МКАД, и&nbsp;дополнительно
+                        30&nbsp;рублей
+                        за&nbsp;каждый километр за&nbsp;пределами МКАД. Для мелкогабаритных товаров стоимость
+                        доставки составляет 300 рублей в&nbsp;пределах МКАД, и&nbsp;возможна индивидуальная
+                        доставка
+                        за&nbsp;пределы МКАД в&nbsp;зависимости от&nbsp;расстояния. Однако, если товар является
+                        гарантийным, то&nbsp;доставка осуществляется бесплатно.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question ">Есть ли ремонт на выезде?</p>
+                    <p class="faq__text">
+                        Да, выезд мастера осуществляется только для группы товаров, таких как массажные
+                        кресла, беговые дорожки, массажные кровати, велобайк, эллипсы, гребные тренажеры,
+                        качалки, офисные кресла и&nbsp;стационарные столы. Если ремонт является гарантийным,
+                        то&nbsp;выезд мастера осуществляется бесплатно. В&nbsp;случае, если ремонт
+                        не&nbsp;является
+                        гарантийным, то&nbsp;выезд мастера является платным и&nbsp;составляет 3000 рублей
+                        в&nbsp;пределах МКАД,
+                        и&nbsp;дополнительно 30&nbsp;рублей за&nbsp;каждый километр за&nbsp;пределами МКАД.
+                        Кроме того, стоимость
+                        ремонта на&nbsp;выезде также будет включать стоимость запасных частей, если они
+                        необходимы.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question ">Как происходит&nbsp;оплата <br> за ремонт?</p>
+                    <p class="faq__text">
+                        Оплата за&nbsp;ремонт осуществляется после завершения работ. Клиенту предоставляется
+                        детальный отчет о&nbsp;проделанных работах и&nbsp;списке замененных запасных частей,
+                        с&nbsp;указанием стоимости каждой позиции. Для гарантийных случаев оплата за&nbsp;ремонт
+                        не&nbsp;взимается.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question ">Что, если товар находится на&nbsp;гарантийном сроке?</p>
+                    <p class="faq__text">
+                        Если ваш товар находится в&nbsp;гарантийном сроке и&nbsp;требует ремонта,
+                        то&nbsp;вы&nbsp;можете
+                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара,
+                        и&nbsp;в&nbsp;случае
+                        подтверждения гарантийного случая, ремонт будет осуществлен бесплатно, включая
+                        бесплатную доставку и&nbsp;выезд мастера, если необходимо.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question">Как заказать выезд <br> мастера на&nbsp;дом?</p>
+                    <p class="faq__text">
+                        Для заказа выезда мастера на&nbsp;ремонт на&nbsp;дому, вам необходимо связаться
+                        с&nbsp;нашим
+                        сервисным центром по&nbsp;указанному телефону или заполнить онлайн-заявку на&nbsp;нашем
+                        сайте.
+                        Мы&nbsp;организуем выезд мастера в&nbsp;удобное для вас время и&nbsp;место,
+                        и&nbsp;проведем ремонт
+                        на&nbsp;месте, если это возможно.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question">Что делать, если товар находится <br> вне гарантийного срока?</p>
+                    <p class="faq__text">
+                        Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
+                        равно можете
+                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
+                        и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
+                        о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
+                    </p>
+                </li>
+                <li class="faq__item">
+                    <p class="faq__question">Как долго происходит ремонт?</p>
+                    <p class="faq__text">
+                        Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
+                        равно можете
+                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
+                        и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
+                        о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
+                    </p>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <section class="two-sections2">
-        <section class="faq">
-            <div class="faq__content container-box">
-                <h2 class="faq__title">ВОПРОС-ОТВЕТ</h2>
-                <ol class="faq__list">
-                    <li class="faq__item">
-                        <p class="faq__question">Забираем&nbsp;ли мы&nbsp;продукцию&nbsp;у <br> клиента, доставляем
-                            в&nbsp;сервис?</p>
-                        <p class="faq__text faq__answer">Да, мы&nbsp;забираем продукцию у&nbsp;клиента если товар
-                            является крупногабаритным (свыше 5&nbsp;кг) или если это гарантийный случай.</p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question">Стоимость доставки?</p>
-                        <p class="faq__text">
-                            Если товар не&nbsp;является гарантийным и&nbsp;является крупногабаритным (свыше
-                            5&nbsp;кг),
-                            стоимость доставки составляет 800 рублей в&nbsp;пределах МКАД, и&nbsp;дополнительно
-                            30&nbsp;рублей
-                            за&nbsp;каждый километр за&nbsp;пределами МКАД. Для мелкогабаритных товаров стоимость
-                            доставки составляет 300 рублей в&nbsp;пределах МКАД, и&nbsp;возможна индивидуальная
-                            доставка
-                            за&nbsp;пределы МКАД в&nbsp;зависимости от&nbsp;расстояния. Однако, если товар является
-                            гарантийным, то&nbsp;доставка осуществляется бесплатно.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question ">Есть ли ремонт на выезде?</p>
-                        <p class="faq__text">
-                            Да, выезд мастера осуществляется только для группы товаров, таких как массажные
-                            кресла, беговые дорожки, массажные кровати, велобайк, эллипсы, гребные тренажеры,
-                            качалки, офисные кресла и&nbsp;стационарные столы. Если ремонт является гарантийным,
-                            то&nbsp;выезд мастера осуществляется бесплатно. В&nbsp;случае, если ремонт
-                            не&nbsp;является
-                            гарантийным, то&nbsp;выезд мастера является платным и&nbsp;составляет 3000 рублей
-                            в&nbsp;пределах МКАД,
-                            и&nbsp;дополнительно 30&nbsp;рублей за&nbsp;каждый километр за&nbsp;пределами МКАД.
-                            Кроме того, стоимость
-                            ремонта на&nbsp;выезде также будет включать стоимость запасных частей, если они
-                            необходимы.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question ">Как происходит&nbsp;оплата <br> за ремонт?</p>
-                        <p class="faq__text">
-                            Оплата за&nbsp;ремонт осуществляется после завершения работ. Клиенту предоставляется
-                            детальный отчет о&nbsp;проделанных работах и&nbsp;списке замененных запасных частей,
-                            с&nbsp;указанием стоимости каждой позиции. Для гарантийных случаев оплата за&nbsp;ремонт
-                            не&nbsp;взимается.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question ">Что, если товар находится на&nbsp;гарантийном сроке?</p>
-                        <p class="faq__text">
-                            Если ваш товар находится в&nbsp;гарантийном сроке и&nbsp;требует ремонта,
-                            то&nbsp;вы&nbsp;можете
-                            обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара,
-                            и&nbsp;в&nbsp;случае
-                            подтверждения гарантийного случая, ремонт будет осуществлен бесплатно, включая
-                            бесплатную доставку и&nbsp;выезд мастера, если необходимо.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question">Как заказать выезд <br> мастера на&nbsp;дом?</p>
-                        <p class="faq__text">
-                            Для заказа выезда мастера на&nbsp;ремонт на&nbsp;дому, вам необходимо связаться
-                            с&nbsp;нашим
-                            сервисным центром по&nbsp;указанному телефону или заполнить онлайн-заявку на&nbsp;нашем
-                            сайте.
-                            Мы&nbsp;организуем выезд мастера в&nbsp;удобное для вас время и&nbsp;место,
-                            и&nbsp;проведем ремонт
-                            на&nbsp;месте, если это возможно.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question">Что делать, если товар находится <br> вне гарантийного срока?</p>
-                        <p class="faq__text">
-                            Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
-                            равно можете
-                            обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
-                            и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
-                            о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
-                        </p>
-                    </li>
-                    <li class="faq__item">
-                        <p class="faq__question">Как долго происходит ремонт?</p>
-                        <p class="faq__text">
-                            Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
-                            равно можете
-                            обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
-                            и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
-                            о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
-                        </p>
-                    </li>
-                </ol>
+    <div class="footer">
+        <div class="footer__content container-box">
+            <div class="footer__logo">
+                <a href="./index.html">
+                    <img src="/assets/images/main-page/logo-footer.svg" alt="логотип Yamaguchi Sevice">
+                </a>
             </div>
-        </section>
-        <section class="contacts" id="contacts">
-            <div class="contacts__wrapper container-box">
-                <div class="contacts__brands contacts__white-bgc">
-                    <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
-                    <ul class="contacts__brands-list">
-                        <li class="contacts__brands-item">
-                            <img src="/assets/images/main-page/icon_contacts_yamaguchi.svg" alt="логотип Yamaguchi">
-                        </li>
-                        <li class="contacts__brands-item">
-                            <img src="/assets/images/main-page/icon_contacts_usmedico.svg" alt="логотип Us Medica">
-                        </li>
-                        <li class="contacts__brands-item">
-                            <img src="/assets/images/main-page/icon_contacts_anatomico.svg" alt="логотип Anatomico">
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="contacts__hours contacts__white-bgc">
-                    <h4 class="contacts__subtitle contacts__subtitle_centers"> Сервисные центры</h4>
-                    <p class="contacts__text">
-                        Мы&nbsp;подберем Вам ближайший салон Yamaguchi, где можно сдать
-                        технику на&nbsp;диагностику.
-                    </p>
-                    <h4 class="contacts__subtitle  contacts__subtitle_hours"> Время работы</h4>
-                    <p class="contacts__text">Получить консультацию можно по&nbsp;телефону сервисного центра
-                        <a class="contacts__phone-ancor"
-                            href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a> <span
-                            class="contacts__hours-string">
-                            (пн-пт:&nbsp;с&nbsp;9.00&nbsp;до&nbsp;18.00,&nbsp;сб:&nbsp;9.00-17.00)</span>
-                    </p>
-                </div>
-                <div class="contacts__trade-in contacts__white-bgc">
-                    <h4 class="contacts__subtitle contacts__subtitle_trade-in">Трейд-Ин</h4>
-                    <p class="contacts__text"> Для оценки Вашего оборудования и условий обмена обращайтесь по
-                        телефону <a class="contacts__phone-ancor"
-                            href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a><span
-                            class="contacts__text_bold">.</span> <a href="/pages/traid-in.html" class="contacts__link"
-                            target="_blank">Подробности&nbsp;на&nbsp;странице <span
-                                class="contacts__word-wrap">Trade-in</span> </a></p>
-                </div>
-
-                <div class="contacts__phone contacts__gray-bgc">
-                    <a class="contacts__phone-ancor-big"
-                        href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
-                    <div class="contacts__phone__block">
-                        <p>Телефон для справок</p>
-                    </div>
-                </div>
-
-                <form class="contacts__form">
-                    <div class="__js__input-wrapper contacts__input-wrapper">
-                        <input class="contacts__input __js__input " type="text" name="name" placeholder="Имя"
-                            pattern="[A-Za-zА-яа-я]{2,}" required>
-                        <p class="__js__err contacts__err">Пожалуйста, введите Ваше имя</p>
-                    </div>
-                    <div class="__js__input-wrapper contacts__input-wrapper">
-                        <input class="contacts__input __js__input" type="tel" name="tel" placeholder="Телефон для связи"
-                            pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
-                        <p class="__js__err contacts__err">Пожалуйста, введите номер телефона</p>
-                    </div>
-                    <div class="__js__input-wrapper contacts__input-wrapper">
-                        <input class="contacts__input __js__input " type="email" name="email" placeholder="Ваш e-mail"
-                            pattern="\S+\.[a-z]{2,4}$" required>
-                        <p class="__js__err contacts__err">Введите корректный адрес электронной почты</p>
-                    </div>
-                    <textarea class="contacts__input contacts__textarea __js__input contacts__input-wrapper"
-                        name="message" placeholder="Модель Вашего оборудования, &#10симптомы поломки"></textarea>
-                    <button class="contacts__button _disabled " type="submit">Отправить заявку</button>
-                </form>
+            <div class="footer__phone">
+                <p>Телефон для справок</p>
+                <a href="tel: +78002223906">7 800 222 39 06</a>
             </div>
-        </section>
-        <div class="footer">
-            <div class="footer__content container-box">
-                <div class="footer__logo">
-                    <a href="./index.html">
-                        <img src="/assets/images/main-page/logo-footer.svg" alt="логотип Yamaguchi Sevice">
-                    </a>
-                </div>
-                <div class="footer__phone">
-                    <p>Телефон для справок</p>
-                    <a href="tel: +78002223906">7 800 222 39 06</a>
-                </div>
-                <nav class="footer__menu">
-                    <ul class="footer__menu-list">
-                        <li><a class="footer__text" href="#contacts">Контакты</a></li>
-                        <li><a class="footer__text" href="/pages/guarantees.html">Гарантии</a></li>
-                        <li><a class="footer__text" href="/pages/traid-in.html"> Trade-in</a></li>
-                        <li><a class="footer__text" href="/pages/delivery.html">Доставка</a></li>
-                        <li><a class="footer__text" href="/pages/about.html">О нас</a></li>
-                    </ul>
-                </nav>
-                <div class="footer__hours">
-                    <p class="footer__text"> Часы работы офиса: <br> пн.–пт. с 9:00 до 19:00</p>
-                </div>
-                <div class="footer__cards">
-                    <p class="footer__text">Принимаем к оплате</p>
-                    <ul class="footer__payment-list">
-                        <li>
-                            <img src="/assets/images/main-page/icon_visa.svg" alt="логотип платежной системы Visa">
-                        </li>
-                        <li>
-                            <img src="/assets/images/main-page/icon_mastercard.svg"
-                                alt="логотип платежной системы Master Card">
-                        </li>
-                        <li>
-                            <img src="/assets/images/main-page/icon_mir.svg" alt="логотип платежной системы Мир">
-                        </li>
-                    </ul>
-                </div>
+            <nav class="footer__menu">
+                <ul class="footer__menu-list">
+                    <li><a class="footer__text" href="#contacts">Контакты</a></li>
+                    <li><a class="footer__text" href="/pages/guarantees.html">Гарантии</a></li>
+                    <li><a class="footer__text" href="/pages/traid-in.html"> Trade-in</a></li>
+                    <li><a class="footer__text" href="/pages/delivery.html">Доставка</a></li>
+                    <li><a class="footer__text" href="/pages/about.html">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="footer__hours">
+                <p class="footer__text"> Часы работы офиса: <br> пн.–пт. с 9:00 до 19:00</p>
+            </div>
+            <div class="footer__cards">
+                <p class="footer__text">Принимаем к оплате</p>
+                <ul class="footer__payment-list">
+                    <li>
+                        <img src="/assets/images/main-page/icon_visa.svg" alt="логотип платежной системы Visa">
+                    </li>
+                    <li>
+                        <img src="/assets/images/main-page/icon_mastercard.svg"
+                            alt="логотип платежной системы Master Card">
+                    </li>
+                    <li>
+                        <img src="/assets/images/main-page/icon_mir.svg" alt="логотип платежной системы Мир">
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
 
     <div class="modal-thanks modal-thanks__overlay ">
         <div class="modal-thanks__content">

@@ -83,6 +83,15 @@
 }
 
 @font-face {
+	font-family: 'OpenSans';
+	src: url("/assets/fonts/OpenSans-ExtraBold.woff2") format('woff2'),
+		url("/assets/fonts/OpenSans-ExtraBold.ttf") format('truetype');
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+}
+
+@font-face {
 	font-family: 'SegoeUI';
 	src: url("/assets/fonts/SegoeUIBold.woff2") format('woff2'),
 		url("/assets/fonts/SegoeUIBold.woff") format('woff'),
@@ -91,5 +100,6 @@
 	font-weight: 700;
 	font-display: swap;
 }
+
 
 

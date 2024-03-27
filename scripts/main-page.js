@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    //faq
-    document.querySelectorAll('.faq__question').forEach(item => {
+    const QUESTIONS = document.querySelectorAll('.faq__question');
+    
+    QUESTIONS.forEach(item => {
         item.addEventListener('click', () => {
-
             const arrow = item;
             const content = item.nextElementSibling;
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.opacity = null;
                 })
                 document.querySelectorAll('.faq__question').forEach(item => {
-                    item.classList.remove('_active');
+                    item.classList.remove('_active', 'faq__question-arrow-rotate');
                 })
             } else {
                 document.querySelectorAll('.faq__text').forEach(item => {
@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.style.opacity = 1;
 
                 document.querySelectorAll('.faq__question').forEach(item => {
-                    item.classList.remove('_active');
+                    item.classList.remove('_active','faq__question-arrow-rotate');
                 })
-                arrow.classList.add('_active');
+                arrow.classList.add('_active' , 'faq__question-arrow-rotate');
             }
         })
     })
