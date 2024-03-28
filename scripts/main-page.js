@@ -1,7 +1,7 @@
 // console.log(title.innerHTML);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const SELECTED_CITY = document.querySelector('.header__selected-city');
+    const SELECTED_CITY = document.querySelectorAll('.header__selected-city');
     let currentCity = SELECTED_CITY.textContent;
     const CITY_LIST = document.querySelector('.header__city-suggest');
     let wrapper = document.querySelector('.header__wrapper');
@@ -16,36 +16,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const IS_MOBILE = window.matchMedia('(max-width: 767px)').matches;
 
 
-    if (localStorage['city']) {
-        SELECTED_CITY.textContent = localStorage.getItem('city');
-    }
+    if (localStorage['city']) SELECTED_CITY.textContent = localStorage.getItem('city');
 
-    const mobCities = document.querySelector('.js-cities__mob');
+    // const mobCities = document.querySelector('.js-cities__mob');
+    const mobCities = document.querySelector('.modal-cities');
     let mobCityList = document.querySelector('.js-cities__list');
 
     //city choice
 
-    function handleOverLay(event) {
+    function handleClickOverLay(event) {
         if (event.target.classList.contains('service-center__list-item') || event.target === SELECTED_CITY) return;
-        close();
+        closeCityList();
     }
 
-    function open() {
-        SELECTED_CITY.classList.add('_active');
+    function openCityList(element) {
+        element.classList.add('_active');
         CITY_LIST.classList.add('_city-list_active');
-        document.addEventListener('click', handleOverLay);
+        document.addEventListener('click', handleClickOverLay);
     }
 
-    function close() {
-        SELECTED_CITY.classList.remove('_active');
+    function closeCityList(element) {
+        element.classList.remove('_active');
         CITY_LIST.classList.remove('_city-list_active');
-        document.removeEventListener('click', handleOverLay);
+        document.removeEventListener('click', handleClickOverLay);
     }
 
 
     //'#' + 181818
     function openMobCity() {
-        mobCities.classList.add('js-cities__active');
+        mobCities.classList.add('show');
         let cityList = document.querySelector('.service-center__city-list-mobile');
         cityList.style.opacity = 1;
         cityList.style.visibility = 'visible';
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeMobCity() {
         document.querySelector('.js-cities__close').addEventListener('click', () => {
-            mobCities.classList.remove('js-cities__active');
+            mobCities.classList.remove('show');
             CITY_LIST.style.opacity = 0;
             CITY_LIST.style.visibility = 'hidden';
             body.style.overflow = 'visible';
@@ -81,14 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 SELECTED_CITY.textContent = city.dataset.city;
                 currentCity = city.dataset.city;
                 localStorage.setItem('city', city.dataset.city);
-                mobCities.classList.remove('js-cities__active');
+                mobCities.classList.remove('show');
                 CITY_LIST.style.opacity = 0;
                 CITY_LIST.style.visibility = 'hidden';
             })
         })
     }
 
-    function checkWindowWidth() {
+    function checkWindowWidth(element) {
 
         if (IS_MOBILE) {
             openMobCity();
@@ -96,14 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
             chooseMobCity();
 
         } else {
-            SELECTED_CITY.classList.contains('_active') ? close() : open();
+            element.classList.contains('_active') ? closeCityList(element) : openCityList(element);
             chooseCity();
         }
     }
 
-    SELECTED_CITY.addEventListener('click', () => {
-        checkWindowWidth();
-    })
+    SELECTED_CITY.forEach(elem => elem.addEventListener('click', (e) => checkWindowWidth(e.target)));
 
     function chooseCity() {
         document.querySelectorAll('.service-center__list-item').forEach(e => {
@@ -147,6 +144,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('_active','faq__question-arrow-rotate');
                 })
                 arrow.classList.add('_active' , 'faq__question-arrow-rotate');
+            }
+        })
+    })
+
+    const QUESTIONS_BOTTOM = document.querySelectorAll('.faq-bottom__question');
+    
+    QUESTIONS_BOTTOM.forEach(item => {
+        item.addEventListener('click', () => {
+            const arrow = item;
+            const content = item.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                document.querySelectorAll('.faq-bottom__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                document.querySelectorAll('.faq-bottom__question').forEach(item => {
+                    item.classList.remove('_active', 'faq-bottom__question-arrow-rotate');
+                })
+            } else {
+                document.querySelectorAll('.faq-bottom__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = 1;
+
+                document.querySelectorAll('.faq-bottom__question').forEach(item => {
+                    item.classList.remove('_active','faq-bottom__question-arrow-rotate');
+                })
+                arrow.classList.add('_active' , 'faq-bottom__question-arrow-rotate');
             }
         })
     })
@@ -454,7 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new ValidationForm(document.querySelector('.contacts__form')).initForm();
     new ValidationForm(document.querySelector('.application-form__form')).initForm();
-
 
 })
 

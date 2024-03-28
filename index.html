@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru"> 
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -27,24 +27,6 @@
 <body>
     <header class="header">
 
-        <!-- <div class="header__mobile-menu">
-            <div class="header__logo">
-                <a href="">
-                    <picture class="">
-                        <source srcset="../assets/images/main-page/logo-header-mobile.svg"
-                            media="(max-width: 767px)">
-                        <img src="/assets/images/main-page/logo-header.svg" alt="Логотип Yamaguchi">
-                    </picture>
-                </a>
-            </div>
-            <div class="header__menu-burger">
-                <span class="header__line-1"></span>
-                <span class="header__line-2"></span>
-                <span class="header__line-3"></span>
-            </div>
-        </div> -->
-
-        <!-- Готовый десктоп -->
         <div class="container-box header__container-box">
 
             <div class="header__above-header">
@@ -118,8 +100,8 @@
                                 <a class="header__tel-mob" href="tel: +78002223906">7 (800) 222-39-06</a>
 
                                 <div class="header__city-choice-mob">
-                                    <div class="header__selected-city-mob">Москва</div>
-                                    <!-- <ul class="header__city-suggest">
+                                    <div class="header__selected-city header__selected-city_mob">Москва</div>
+                                    <ul class="header__city-suggest header__city-suggest_mob">
                                         <li class="header__list-item" data-city="Аксай">Аксай</li>
                                         <li class="header__list-item" data-city="Анапа">Анапа</li>
                                         <li class="header__list-item" data-city="Ангарск">Ангарск</li>
@@ -143,7 +125,7 @@
                                         <li class="header__list-item" data-city="Ростов-на-Дону">Ростов-на-Дону</li>
                                         <li class="header__list-item" data-city="Санкт-Петербург">Санкт-Петербург</li>
                                         <li class="header__list-item" data-city="Таганрог">Таганрог</li>
-                                    </ul> -->
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
@@ -157,49 +139,50 @@
 
     </header>
 
-    <div class="js-cities__mob">
-        <!-- <img class="js-cities__img" src="../assets/images/main-page/header_menu-mobile.webp" alt="шар"> -->
-        <div class="js-cities__two-blocks">
-            <div class="js-cities__header">
-                <div class="js-cities__top-wrapper">
-                    <h1 class="js-cities__title">
-                        Выберите
-                        ваш город
-                    </h1>
-                    <span class="js-cities__close">
-                        &#10006;
-                    </span>
-                    <div class="service-center__city-list-mobile">
-                        <div class="service-center__list-item" data-city="Аксай">Аксай</div>
-                        <div class="service-center__list-item" data-city="Анапа">Анапа</div>
-                        <div class="service-center__list-item" data-city="Ангарск">Ангарск</div>
-                        <div class="service-center__list-item" data-city="Армавир">Армавир</div>
-                        <div class="service-center__list-item" data-city="Архангельск">Архангельск</div>
-                        <div class="service-center__list-item" data-city="Астрахань">Астрахань</div>
-                        <div class="service-center__list-item" data-city="Барнаул">Барнаул</div>
-                        <div class="service-center__list-item" data-city="Белгород">Белгород</div>
-                        <div class="service-center__list-item" data-city="Владивосток">Владивосток</div>
-                        <div class="service-center__list-item" data-city="Геленджик">Геленджик</div>
-                        <div class="service-center__list-item" data-city="Дзержинск">Дзержинск</div>
-                        <div class="service-center__list-item" data-city="Евпатория">Евпатория</div>
-                        <div class="service-center__list-item" data-city="Иваново">Иваново</div>
-                        <div class="service-center__list-item" data-city="Йошкар-Ола">Йошкар-Ола</div>
-                        <div class="service-center__list-item" data-city="Казань">Казань</div>
-                        <div class="service-center__list-item" data-city="Липецк">Липецк</div>
-                        <div class="service-center__list-item" data-city="Москва">Москва</div>
-                        <div class="service-center__list-item" data-city="Набережные Челны">Набережные Челны</div>
-                        <div class="service-center__list-item" data-city="Одесса">Одесса</div>
-                        <div class="service-center__list-item" data-city="Пенза">Пенза</div>
-                        <div class="service-center__list-item" data-city="Ростов-на-Дону">Ростов-на-Дону</div>
-                        <div class="service-center__list-item" data-city="Санкт-Петербург">Санкт-Петербург</div>
-                        <div class="service-center__list-item" data-city="Таганрог">Таганрог</div>
+    <!-- <div class="js-cities__mob">
+        <div class="js-cities__two-blocks"> -->
+
+            <div class="modal-cities">
+                <div class="modal-cities__container-box container-box">
+
+                    <h3 class="modal-cities__title js-cities__title">Выберите ваш город</h3>
+
+                    <div class="modal-cities__icon-close js-cities__close">
+                        <img class="modal-cities__icon-img" src="./assets/images/main-page/closing-icon.svg" alt="">
                     </div>
+                    
+                    <ul class="modal-cities__list-cities service-center__city-list-mobile">
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Аксай">Аксай</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Анапа">Анапа</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Ангарск">Ангарск</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Армавир">Армавир</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Архангельск">Архангельск</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Астрахань">Астрахань</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Барнаул">Барнаул</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Белгород">Белгород</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Владивосток">Владивосток</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Геленджик">Геленджик</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Дзержинск">Дзержинск</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Евпатория">Евпатория</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Иваново">Иваново</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Йошкар-Ола">Йошкар-Ола</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Казань">Казань</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Липецк">Липецк</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Москва">Москва</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Набережные Челны">Набережные Челны</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Одесса">Одесса</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Пенза">Пенза</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Ростов-на-Дону">Ростов-на-Дону</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Санкт-Петербург">Санкт-Петербург</li>
+                        <li class="modal-cities__city-item service-center__list-item" data-city="Таганрог">Таганрог</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            
+        <!-- </div>
         <div class="js-cities__list">
         </div>
-    </div>
+    </div> -->
 
     <section class="poster">
         <div class="container-box poster__container-box">
@@ -214,16 +197,16 @@
         <div class="container-box service-center__content">
 
             <ul class="service-center__list">
-                <li class="service-center__list-item">
+                <li class="service-center__list-item-elem">
                     <a class="service-center__list-item-text">Беговые дорожки</a>
                 </li>
-                <li class="service-center__list-item">
+                <li class="service-center__list-item-elem">
                     <a class="service-center__list-item-text">Массажные кресла</a>
                 </li>
-                <li class="service-center__list-item">
+                <li class="service-center__list-item-elem">
                     <a class="service-center__list-item-text">Массажеры</a>
                 </li>
-                <li class="service-center__list-item">
+                <li class="service-center__list-item-elem">
                     <a class="service-center__list-item-text">Фитнес-тренажеры</a>
                 </li>
             </ul>
@@ -272,7 +255,8 @@
                 <li class="services__item services__item_diagnostics">
                     <h4 class="services__item-title services__item-title_diagnostics">3. Диагностика и согласование
                         <span class="services__word-positioning-diagnostics-mob">стоимости <span
-                                class="services__word-positioning-diagnostics">ремонта</span></span></h4>
+                                class="services__word-positioning-diagnostics">ремонта</span></span>
+                    </h4>
                     <ul class="services__item-text-block">
                         <li class="services__text-block-item">После получения кресла нашими специалистами, мы
                             связываемся с клиентом, для согласования стоимости ремонта, если случай не является
@@ -295,69 +279,52 @@
 
         </div>
     </section>
-    
+
     <section class="application-form">
         <div class="application-form__container-box container-box">
 
             <h3 class="application-form__title">Оформить заявку на ремонт</h3>
-    
+
             <form class="application-form__container-form">
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="application-form__input application-form__input_name __js__input" 
-                        type="text" 
-                        name="name"
-                        placeholder="Имя" 
-                        required 
-                        pattern="[A-Za-zА-яа-я]{2,}"
-                    >
+                    <input class="application-form__input application-form__input_name __js__input" type="text"
+                        name="name" placeholder="Имя" required pattern="[A-Za-zА-яа-я]{2,}">
                     <p class="application-form__err __js__err">Пожалуйста, введите имя</p>
                 </div>
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="application-form__input __js__input" 
-                        type="tel" 
-                        name="tel"
-                        placeholder="Телефон для связи" 
-                        required 
-                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                    >
+                    <input class="application-form__input __js__input" type="tel" name="tel"
+                        placeholder="Телефон для связи" required
+                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
                     <p class="application-form__err __js__err">Пожалуйста, введите номер телефона</p>
                 </div>
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="application-form__input __js__input" 
-                        type="email" 
-                        placeholder="Ваш e-mail" 
-                        name="email"
-                        pattern="\S+\.[a-z]{2,4}$" 
-                        required
-                    >
+                    <input class="application-form__input __js__input" type="email" placeholder="Ваш e-mail"
+                        name="email" pattern="\S+\.[a-z]{2,4}$" required>
                     <p class="application-form__err __js__err">Введите корректный адрес электронной почты</p>
                 </div>
 
                 <div class="application-form__wrapper-data-processing">
                     <input class="application-form__data-processing-checkbox" type="checkbox" required>
                     <div class="application-form__wrapper-checkbox">
-                        <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt="" class="application-form__img-checkbox application-form__img-checkbox_rejection hide">
-                        <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt="" class="application-form__img-checkbox application-form__img-checkbox_approval">
+                        <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt=""
+                            class="application-form__img-checkbox application-form__img-checkbox_rejection hide">
+                        <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt=""
+                            class="application-form__img-checkbox application-form__img-checkbox_approval">
                     </div>
-                    <label class="application-form__data-processing-text">Я согласен(а) с политикой конфиденциальности и даю согласие на обработку персональных данных</label>
+                    <label class="application-form__data-processing-text">Я согласен(а) с политикой конфиденциальности и
+                        даю согласие на обработку персональных данных</label>
                 </div>
 
-                <textarea 
-                    class="application-form__input application-form__textarea __js__input" 
-                    name="message"
-                    placeholder="Модель оборудования, симптомы поломки"
-                ></textarea>
+                <textarea class="application-form__input application-form__textarea __js__input" name="message"
+                    placeholder="Модель оборудования, симптомы поломки"></textarea>
 
                 <button class="application-form__button _disabled" type="button">Отправить заявку</button>
 
             </form>
-            
+
         </div>
     </section>
 
@@ -367,33 +334,43 @@
                 <img class="exchange__img" src="./assets/images/main-page/yamaguchi-x.webp" alt="">
             </div>
             <p class="exchange__text">Также обменяем Ваше старое массажное кресло на новое со скидкой в Trade-in</p>
-        </div>    
+        </div>
     </section>
 
     <section class="details section" id="details">
         <div class="details__container-box container-box">
             <h3 class="details__title">Подробно о наших услугах</h3>
 
-            <p class="details__text">Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает долгий срок службы вашего массажного оборудования. Мы понимаем, что каждое устройство имеет свои особенности, поэтому мы оснащены знаниями и опытом для ремонта различных видов и типов массажного оборудования. Независимо от того, является ли вашим оборудованием массажное кресло, массажер, беговая дорожка или <br class="mob-show">фитнес-тренажер, мы обеспечим его полноценное восстановление.</p>
-            <p class="details__text">Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего массажного оборудования Yamaguchi, выявим все неисправности и незамедлительно устраним их. При необходимости мы заменим детали и комплектующие только оригинальными запчастями Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.</p>
+            <p class="details__text">Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает
+                долгий срок службы вашего массажного оборудования. Мы понимаем, что каждое устройство имеет свои
+                особенности, поэтому мы оснащены знаниями и опытом для ремонта различных видов и типов массажного
+                оборудования. Независимо от того, является ли вашим оборудованием массажное кресло, массажер, беговая
+                дорожка или <br class="mob-show">фитнес-тренажер, мы обеспечим его полноценное восстановление.</p>
+            <p class="details__text">Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную
+                диагностику вашего массажного оборудования Yamaguchi, выявим все неисправности и незамедлительно
+                устраним их. При необходимости мы заменим детали и комплектующие только оригинальными запчастями
+                Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.</p>
         </div>
     </section>
 
     <section class="contacts" id="contacts">
         <div class="contacts__container-box container-box">
             <h3 class="contacts__title">Контакты</h3>
-            
+
             <div class="contacts__brands contacts_white-bgc">
                 <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
                 <ul class="contacts__brands-list">
                     <li class="contacts__brands-item contacts__brands-item_yamaguchi">
-                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_yamaguchi.svg" alt="Yamaguchi">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_yamaguchi.svg"
+                            alt="Yamaguchi">
                     </li>
                     <li class="contacts__brands-item contacts__brands-item_us-medica">
-                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_usmedico.svg" alt="Us Medica">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_usmedico.svg"
+                            alt="Us Medica">
                     </li>
                     <li class="contacts__brands-item contacts__brands-item_anatomico">
-                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_anatomico.svg" alt="Anatomico">
+                        <img class='contacts__img' src="/assets/images/main-page/icon_contacts_anatomico.svg"
+                            alt="Anatomico">
                     </li>
                 </ul>
             </div>
@@ -401,23 +378,27 @@
             <div class="contacts__hours contacts_white-bgc">
 
                 <h4 class="contacts__subtitle contacts__subtitle_centers">Сервисные центры</h4>
-                <p class="contacts__text">Мы&nbsp;подберем Вам ближайший салон Yamaguchi, где можно сдать технику на&nbsp;диагностику.</p>
+                <p class="contacts__text">Мы&nbsp;подберем Вам ближайший салон Yamaguchi, где можно сдать технику
+                    на&nbsp;диагностику.</p>
 
                 <h4 class="contacts__subtitle  contacts__subtitle_hours"> Время работы</h4>
                 <p class="contacts__text">
                     Получить консультацию можно по&nbsp;<br class="mob-show">телефону сервисного центра
-                    <a class="contacts__phone-wrapper-anchor" href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
+                    <a class="contacts__phone-wrapper-anchor"
+                        href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
                     <span class="contacts__hours-string">(пн-пт:&nbsp;с&nbsp;9.00&nbsp;до&nbsp;18.00,&nbsp;сб:&nbsp;9.00-17.00)</span>
                 </p>
             </div>
 
             <div class="contacts__trade-in contacts_white-bgc">
                 <h4 class="contacts__subtitle contacts__subtitle_trade-in">Трейд-Ин</h4>
-                <p class="contacts__text"> 
-                    Для оценки Вашего оборудования и условий обмена обращайтесь по телефону 
+                <p class="contacts__text">
+                    Для оценки Вашего оборудования и условий обмена обращайтесь по телефону
                     <a class="contacts__phone-anchor" href="tel: +78002223906">7&nbsp;800&nbsp;222&nbsp;39&nbsp;06</a>
-                    <span class="contacts__text_bold">.</span> 
-                    <a href="/pages/traid-in.html" class="contacts__link" target="_blank">Подробности&nbsp;на&nbsp;странице <span class="contacts__word-wrap">Trade-in</span></a>
+                    <span class="contacts__text_bold">.</span>
+                    <a href="/pages/traid-in.html" class="contacts__link"
+                        target="_blank">Подробности&nbsp;на&nbsp;странице <span
+                            class="contacts__word-wrap">Trade-in</span></a>
                 </p>
             </div>
 
@@ -432,51 +413,31 @@
             <form class="contacts__form">
 
                 <div class="contacts__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="contacts__input __js__input " 
-                        type="text" 
-                        name="name" 
-                        placeholder="Имя"
-                        pattern="[A-Za-zА-яа-я]{2,}" 
-                        required
-                    >
+                    <input class="contacts__input __js__input " type="text" name="name" placeholder="Имя"
+                        pattern="[A-Za-zА-яа-я]{2,}" required>
                     <p class="contacts__err __js__err">Пожалуйста, введите Ваше имя</p>
                 </div>
 
                 <div class="contacts__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="contacts__input __js__input" 
-                        type="tel" 
-                        name="tel" 
-                        placeholder="Телефон для связи"
-                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" 
-                        required
-                    >
+                    <input class="contacts__input __js__input" type="tel" name="tel" placeholder="Телефон для связи"
+                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
                     <p class="contacts__err __js__err">Пожалуйста, введите номер телефона</p>
                 </div>
 
                 <div class="contacts__input-wrapper __js__input-wrapper">
-                    <input 
-                        class="contacts__input __js__input" 
-                        type="email" 
-                        name="email" 
-                        placeholder="Ваш e-mail"
-                        pattern="\S+\.[a-z]{2,4}$" 
-                        required
-                        >
+                    <input class="contacts__input __js__input" type="email" name="email" placeholder="Ваш e-mail"
+                        pattern="\S+\.[a-z]{2,4}$" required>
                     <p class="contacts__err __js__err">Введите корректный адрес электронной почты</p>
                 </div>
 
-                <textarea 
-                    class="contacts__input-wrapper contacts__input contacts__textarea __js__input"
-                    name="message" 
-                    placeholder="Модель Вашего оборудования, &#10симптомы поломки"
-                ></textarea>
+                <textarea class="contacts__input-wrapper contacts__input contacts__textarea __js__input" name="message"
+                    placeholder="Модель оборудования, симптомы поломки"></textarea>
 
                 <button class="contacts__button _disabled " type="submit">Отправить заявку</button>
             </form>
 
-            <p class="contacts__text-botom">Благодарим за выбор нашего сервисного центра Yamaguchi! Если у вас возникнут дополнительные вопросы, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь вам.</p>
+            <p class="contacts__text-botom">Благодарим за выбор нашего сервисного центра Yamaguchi! Если у вас возникнут
+                дополнительные вопросы, пожалуйста, свяжитесь с нами. Мы всегда готовы помочь вам.</p>
 
         </div>
     </section>
@@ -485,7 +446,8 @@
         <div class="guarantees__container-box container-box">
 
             <h3 class="guarantees__title">Гарантии</h3>
-            <p class="guarantees__subtitle">Официальный сервисный центр предлагает своим клиентам гарантийное обслуживание на все модели массажных кресел Yamaguchi.</p>
+            <p class="guarantees__subtitle">Официальный сервисный центр предлагает своим клиентам гарантийное
+                обслуживание на все модели массажных кресел Yamaguchi.</p>
 
 
             <div class="guarantees__container-cards">
@@ -493,34 +455,45 @@
                     <h4 class="guarantees__period-title">Срок гарантии</h4>
                     <p class="guarantees__period-text">Стандартная гарантия <br>6 месяцев</p>
                 </div>
-    
+
                 <div class="guarantees__warranty">
                     <h4 class="guarantees__warranty-title">Что покрывает гарантия</h4>
                     <ul class="guarantees__warranty-list">
-                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_repair">Бесплатный ремонт или замена неисправных деталей</li>
-                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_diagnostics">Бесплатная диагностика</li>
-                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_help">Бесплатная выездная техническая помощь (в пределах Москвы и Московской области)</li>
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_repair">Бесплатный
+                            ремонт или замена неисправных деталей</li>
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_diagnostics">Бесплатная
+                            диагностика</li>
+                        <li class="guarantees__warranty-list-item guarantees__warranty-list-item_help">Бесплатная
+                            выездная техническая помощь (в пределах Москвы и Московской области)</li>
                     </ul>
                 </div>
-    
+
                 <div class="guarantees__getting">
                     <h4 class="guarantees__getting-title">Как получить гарантийное
                         обслуживание</h4>
                     <ul class="guarantees__getting-list">
-                        <li class="guarantees__getting-list-item guarantees__getting-list-item_application">Оставьте заявку на сайте или свяжитесь с нами по телефону +7&nbsp;(495)&nbsp;123-45-67</li>
-                        <li class="guarantees__getting-list-item guarantees__getting-list-item_information">Предоставьте нам информацию о модели вашего кресла</li>
-                        <li class="guarantees__getting-list-item guarantees__getting-list-item_problem">Опишите проблему, с которой вы столкнулись</li>
-                        <li class="guarantees__getting-list-item guarantees__getting-list-item_agreement">Наш специалист согласует с вами удобное время для визита</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_application">Оставьте
+                            заявку на сайте или свяжитесь с нами по телефону +7&nbsp;(495)&nbsp;123-45-67</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_information">Предоставьте
+                            нам информацию о модели вашего кресла</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_problem">Опишите
+                            проблему, с которой вы столкнулись</li>
+                        <li class="guarantees__getting-list-item guarantees__getting-list-item_agreement">Наш специалист
+                            согласует с вами удобное время для визита</li>
                     </ul>
                 </div>
-    
+
                 <div class="guarantees__important">
                     <h4 class="guarantees__important-title">Важно</h4>
                     <p class="guarantees__important-text">Гарантия аннулируется, если:</p>
                     <ul class="guarantees__important-list">
-                        <li class="guarantees__important-list-item guarantees__important-list-item_damage">Кресло было повреждено в результате механического воздействия</li>
-                        <li class="guarantees__important-list-item guarantees__important-list-item_authorised">Кресло было отремонтировано не&nbsp;<br class="mob-show">в&nbsp;authorised сервисном<br class="desk-show">центре</li>
-                        <li class="guarantees__important-list-item guarantees__important-list-item_exploitation">Были нарушены правила эксплуатации</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_damage">Кресло было
+                            повреждено в результате механического воздействия</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_authorised">Кресло
+                            было отремонтировано не&nbsp;<br class="mob-show">в&nbsp;authorised сервисном<br
+                                class="desk-show">центре</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_exploitation">Были
+                            нарушены правила эксплуатации</li>
                     </ul>
                 </div>
             </div>
@@ -533,11 +506,14 @@
             <ul class="faq__list">
                 <li class="faq__item">
                     <p class="faq__question">Что делать, если я обнаружил неисправность в работе массажного кресла?</p>
-                    <p class="faq__text faq__text_max-width">Свяжитесь с нами по телефону <b class="faq__text-bold"><br class="mob-show">+7 (495)123-45-67</b> или электронной почте [удаленный электронный адрес].</p>
+                    <p class="faq__text faq__text_max-width">Свяжитесь с нами по телефону <b class="faq__text-bold"><br
+                                class="mob-show">+7 (495)123-45-67</b> или электронной почте [удаленный электронный
+                        адрес].</p>
                 </li>
                 <li class="faq__item">
                     <p class="faq__question">Сколько стоит ремонт массажного кресла?</p>
-                    <p class="faq__text">Стоимость ремонта зависит от модели кресла ихарактера неисправности. Для точной оценки стоимости ремонта необходимопровести диагностику.</p>
+                    <p class="faq__text">Стоимость ремонта зависит от модели кресла ихарактера неисправности. Для точной
+                        оценки стоимости ремонта необходимопровести диагностику.</p>
                 </li>
                 <li class="faq__item">
                     <p class="faq__question ">Как долго длится гарантийный ремонт?</p>
@@ -553,8 +529,12 @@
             <div class="trade-in__content-block trade-in__content-block_top">
                 <h4 class="trade-in__block-title">Обновляться выгодно!</h4>
                 <div class="trade-in__content-text">
-                    <p class="trade-in__text-item">Обменяйте с доплатой такое привычное для Вас, но&nbsp;износившееся массажное кресло на новое, инновационное с большим усовершенствованным функционалом. Это отличная возможность сэкономить на покупке нового кресла и не думать об утилизации старого оборудования.</p>
-                    <p class="trade-in__text-item trade-in__text-item_bold">Обменяем Ваше старое массажное кресло на новое со&nbsp;скидкой в Trade-in</p>
+                    <p class="trade-in__text-item">Обменяйте с доплатой такое привычное для Вас, но&nbsp;износившееся
+                        массажное кресло на новое, инновационное с большим усовершенствованным функционалом.
+                        Это отличная возможность сэкономить на покупке нового кресла и не думать об утилизации старого
+                        оборудования.</p>
+                    <p class="trade-in__text-item trade-in__text-item_bold">Обменяем Ваше старое массажное кресло на
+                        новое со&nbsp;скидкой в Trade-in</p>
                 </div>
             </div>
             <div class="trade-in__wrapper-img trade-in__wrapper-img_top">
@@ -566,67 +546,49 @@
             <div class="trade-in__content-block trade-in__content-block_bottom">
                 <h4 class="trade-in__block-title">Trade-in – это очевидная выгода!</h4>
                 <div class="trade-in__content-text">
-                    <p class="trade-in__text-item">Оценка старого массажного кресла производится нашим специалистом, окончательная стоимость зависит от 2 видов износа - физический (исправность, комплектация, внешний вид), функциональный (функциональность кресла по отношению к современным аналогам).</p>
+                    <p class="trade-in__text-item">Оценка старого массажного кресла производится нашим специалистом,
+                        окончательная стоимость зависит от 2 видов износа - физический (исправность, комплектация,
+                        внешний вид), функциональный (функциональность кресла по отношению к современным аналогам).</p>
                 </div>
             </div>
 
             <div class="trade-in__form-wrapper">
                 <h3 class="trade-in__form-wrapper-title">Оформить заявку на Trade-in</h3>
-                
+
                 <form class="trade-in__form">
 
-                        <div class="trade-in__input-wrapper trade-in__input-wrapper_name __js__input-wrapper">
-                            <input 
-                                class="trade-in__input trade-in__input_name __js__input" 
-                                title="Имя должно содержать больше двух букв" 
-                                type="text" 
-                                name="name" 
-                                placeholder="Имя"  
-                                pattern = "[A-Za-zА-яа-я]{2,}"  
-                                required
-                            >
-                            <p class="trade-in__err __js__err">Пожалуйста, введите Ваше имя</p>
-                        </div>
-                        <div class="trade-in__input-wrapper trade-in__input-wrapper_tel __js__input-wrapper">
-                            <input 
-                                class="trade-in__input trade-in__input_tel __js__input" 
-                                type="text" 
-                                name="tel" 
-                                id="tel" 
-                                pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" 
-                                placeholder="Телефон для связи"
-                                required
-                            >
-                            <p class="trade-in__err __js__err">Ввведите номер телефона</p>
-                        </div>
-                        <div class="trade-in__input-wrapper trade-in__input-wrapper_email __js__input-wrapper"> 
-                            <input 
-                                class="trade-in__input trade-in__input_email __js__input" 
-                                type="text" 
-                                name="email" 
-                                id="email" 
-                                placeholder="e-mail" 
-                                pattern="\S+\.[a-z]{2,4}$" 
-                                required
-                            >
-                            <p class="trade-in__err __js__err">Введите корректный адрес электронной почты</p>
-                        </div>
+                    <div class="trade-in__input-wrapper trade-in__input-wrapper_name __js__input-wrapper">
+                        <input class="trade-in__input trade-in__input_name __js__input"
+                            title="Имя должно содержать больше двух букв" type="text" name="name" placeholder="Имя"
+                            pattern="[A-Za-zА-яа-я]{2,}" required>
+                        <p class="trade-in__err __js__err">Пожалуйста, введите Ваше имя</p>
+                    </div>
+                    <div class="trade-in__input-wrapper trade-in__input-wrapper_tel __js__input-wrapper">
+                        <input class="trade-in__input trade-in__input_tel __js__input" type="text" name="tel" id="tel"
+                            pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Телефон для связи"
+                            required>
+                        <p class="trade-in__err __js__err">Ввведите номер телефона</p>
+                    </div>
+                    <div class="trade-in__input-wrapper trade-in__input-wrapper_email __js__input-wrapper">
+                        <input class="trade-in__input trade-in__input_email __js__input" type="text" name="email"
+                            id="email" placeholder="e-mail" pattern="\S+\.[a-z]{2,4}$" required>
+                        <p class="trade-in__err __js__err">Введите корректный адрес электронной почты</p>
+                    </div>
 
-                        <div class="trade-in__input-wrapper trade-in__input-wrapper_checkbox __js__input-wrapper">
-                            <input 
-                                class="trade-in__input trade-in__input_checkbox __js__input" 
-                                type="checkbox" 
-                                name="policy" 
-                                id="policy" 
-                                required
-                            >
-                            <div class="trade-in__wrapper-checkbox">
-                                <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt="" class="trade-in__img-checkbox trade-in__img-checkbox_rejection hide">
-                                <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt="" class="trade-in__img-checkbox trade-in__img-checkbox_approval">
-                            </div>
-                            <label class="trade-in__input-label" for="policy">Я ознакомлен(а) с  политикой конфиденциальности и даю  согласие на обработку персональных данных</label>
-                            <p class="trade-in__err trade-in__err_checkbox __js__err">Пожалуйста, ознакомьтесь с Политикой конфиденциальности</p>
+                    <div class="trade-in__input-wrapper trade-in__input-wrapper_checkbox __js__input-wrapper">
+                        <input class="trade-in__input trade-in__input_checkbox __js__input" type="checkbox"
+                            name="policy" id="policy" required>
+                        <div class="trade-in__wrapper-checkbox">
+                            <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt=""
+                                class="trade-in__img-checkbox trade-in__img-checkbox_rejection hide">
+                            <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt=""
+                                class="trade-in__img-checkbox trade-in__img-checkbox_approval">
                         </div>
+                        <label class="trade-in__input-label" for="policy">Я ознакомлен(а) с политикой конфиденциальности
+                            и даю согласие на обработку персональных данных</label>
+                        <p class="trade-in__err trade-in__err_checkbox __js__err">Пожалуйста, ознакомьтесь с Политикой
+                            конфиденциальности</p>
+                    </div>
                     <button class="trade-in__form-button _disabled" type="button">Отправить заявку</button>
                 </form>
 
@@ -702,143 +664,120 @@
             </ul>
         </div>
     </section> -->
-    
-    <section class="faq-1">
-        <div class="faq__content container-box">
-            <h3 class="faq__title">Часто задаваемые вопросы</h3>
-            <ul class="faq__list">
-                <li class="faq__item">
-                    <p class="faq__question">Забираем&nbsp;ли мы&nbsp;продукцию&nbsp;у <br> клиента, доставляем
-                        в&nbsp;сервис?</p>
-                    <p class="faq__text faq__answer">Да, мы&nbsp;забираем продукцию у&nbsp;клиента если товар
-                        является крупногабаритным (свыше 5&nbsp;кг) или если это гарантийный случай.</p>
+
+    <section class="faq-bottom">
+        <div class="faq-bottom__content container-box">
+            <h3 class="faq-bottom__title">вопросы и ответы</h3>
+
+            <ul class="faq-bottom__list">
+
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question">Забираем ли мы продукцию у&nbsp;клиента, доставляем в сервис?</p>
+                    <p class="faq-bottom__text faq-bottom__answer">Да, мы забираем продукцию у клиента, если товар
+                        является крупногабаритным (свыше 5 кг) или если это гарантийный случай.</p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question">Стоимость доставки?</p>
-                    <p class="faq__text">
-                        Если товар не&nbsp;является гарантийным и&nbsp;является крупногабаритным (свыше
-                        5&nbsp;кг),
-                        стоимость доставки составляет 800 рублей в&nbsp;пределах МКАД, и&nbsp;дополнительно
-                        30&nbsp;рублей
-                        за&nbsp;каждый километр за&nbsp;пределами МКАД. Для мелкогабаритных товаров стоимость
-                        доставки составляет 300 рублей в&nbsp;пределах МКАД, и&nbsp;возможна индивидуальная
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question">Стоимость доставки?</p>
+                    <p class="faq-bottom__text">
+                        Если товар не является гарантийным и является крупногабаритным (свыше
+                        5 кг),
+                        стоимость доставки составляет 800 рублей в пределах МКАД, и дополнительно
+                        30 рублей
+                        за каждый километр за пределами МКАД. Для мелкогабаритных товаров стоимость
+                        доставки составляет 300 рублей в пределах МКАД, и возможна индивидуальная
                         доставка
-                        за&nbsp;пределы МКАД в&nbsp;зависимости от&nbsp;расстояния. Однако, если товар является
-                        гарантийным, то&nbsp;доставка осуществляется бесплатно.
+                        за пределы МКАД в зависимости от расстояния. Однако, если товар является
+                        гарантийным, то доставка осуществляется бесплатно.
                     </p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question ">Есть ли ремонт на выезде?</p>
-                    <p class="faq__text">
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question ">Есть ли ремонт на выезде?</p>
+                    <p class="faq-bottom__text">
                         Да, выезд мастера осуществляется только для группы товаров, таких как массажные
                         кресла, беговые дорожки, массажные кровати, велобайк, эллипсы, гребные тренажеры,
-                        качалки, офисные кресла и&nbsp;стационарные столы. Если ремонт является гарантийным,
-                        то&nbsp;выезд мастера осуществляется бесплатно. В&nbsp;случае, если ремонт
-                        не&nbsp;является
-                        гарантийным, то&nbsp;выезд мастера является платным и&nbsp;составляет 3000 рублей
-                        в&nbsp;пределах МКАД,
-                        и&nbsp;дополнительно 30&nbsp;рублей за&nbsp;каждый километр за&nbsp;пределами МКАД.
+                        качалки, офисные кресла и стационарные столы. Если ремонт является гарантийным,
+                        то выезд мастера осуществляется бесплатно. В случае, если ремонт
+                        не является
+                        гарантийным, то&nbsp;выезд мастера является платным и составляет 3000 рублей
+                        в пределах МКАД,
+                        и дополнительно 30 рублей за каждый километр за пределами МКАД.
                         Кроме того, стоимость
-                        ремонта на&nbsp;выезде также будет включать стоимость запасных частей, если они
+                        ремонта на выезде также будет включать стоимость запасных частей, если они
                         необходимы.
                     </p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question ">Как происходит&nbsp;оплата <br> за ремонт?</p>
-                    <p class="faq__text">
-                        Оплата за&nbsp;ремонт осуществляется после завершения работ. Клиенту предоставляется
-                        детальный отчет о&nbsp;проделанных работах и&nbsp;списке замененных запасных частей,
-                        с&nbsp;указанием стоимости каждой позиции. Для гарантийных случаев оплата за&nbsp;ремонт
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question ">Как происходит оплата за ремонт?</p>
+                    <p class="faq-bottom__text">
+                        Оплата за ремонт осуществляется после завершения работ. Клиенту предоставляется
+                        детальный отчет о проделанных работах и списке замененных запасных частей,
+                        с указанием стоимости каждой позиции. Для гарантийных случаев оплата за ремонт
                         не&nbsp;взимается.
                     </p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question ">Что, если товар находится на&nbsp;гарантийном сроке?</p>
-                    <p class="faq__text">
-                        Если ваш товар находится в&nbsp;гарантийном сроке и&nbsp;требует ремонта,
-                        то&nbsp;вы&nbsp;можете
-                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара,
-                        и&nbsp;в&nbsp;случае
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question ">Что, если товар находится в гарантийном сроке?</p>
+                    <p class="faq-bottom__text">
+                        Если ваш товар находится в гарантийном сроке и требует ремонта,
+                        то вы можете
+                        обратиться в наш сервисный центр. Мы проведем диагностику вашего товара,
+                        и в случае
                         подтверждения гарантийного случая, ремонт будет осуществлен бесплатно, включая
-                        бесплатную доставку и&nbsp;выезд мастера, если необходимо.
+                        бесплатную доставку и выезд мастера, если необходимо.
                     </p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question">Как заказать выезд <br> мастера на&nbsp;дом?</p>
-                    <p class="faq__text">
-                        Для заказа выезда мастера на&nbsp;ремонт на&nbsp;дому, вам необходимо связаться
-                        с&nbsp;нашим
-                        сервисным центром по&nbsp;указанному телефону или заполнить онлайн-заявку на&nbsp;нашем
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question">Как заказать выезд мастера на ремонт на дому?</p>
+                    <p class="faq-bottom__text">
+                        Для заказа выезда мастера на ремонт на дому, вам необходимо связаться
+                        с нашим
+                        сервисным центром по указанному телефону или заполнить онлайн-заявку на нашем
                         сайте.
-                        Мы&nbsp;организуем выезд мастера в&nbsp;удобное для вас время и&nbsp;место,
-                        и&nbsp;проведем ремонт
-                        на&nbsp;месте, если это возможно.
+                        Мы организуем выезд мастера в удобное для вас время и место,
+                        и проведем ремонт
+                        на месте, если это возможно.
                     </p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question">Что делать, если товар находится <br> вне гарантийного срока?</p>
-                    <p class="faq__text">
-                        Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
-                        равно можете
-                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
-                        и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
-                        о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
-                    </p>
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question">Что делать, если товар находится&nbsp;вне гарантийного срока?</p>
+                    <p class="faq-bottom__text">Если ваш товар находится вне гарантийного срока и требует ремонта, вы все равно можете обратиться в наш сервисный центр. Мы проведем диагностику вашего товара и предоставим вам детальный отчет о состоянии товара и стоимости ремонта. Если вы согласны на ремонт, мы проведем его после вашего подтверждения и произведения оплаты за услуги и запасные части.</p>
                 </li>
-                <li class="faq__item">
-                    <p class="faq__question">Как долго происходит ремонт?</p>
-                    <p class="faq__text">
-                        Если ваш товар находится вне гарантийного срока и&nbsp;требует ремонта, вы&nbsp;все
-                        равно можете
-                        обратиться в&nbsp;наш сервисный центр. Мы&nbsp;проведем диагностику вашего товара
-                        и&nbsp;предоставим вам детальный отчет о&nbsp;стоимости ремонта. Ваше решение
-                        о&nbsp;проведении ремонта будет основано на&nbsp;этой информации.
+                <li class="faq-bottom__item">
+                    <p class="faq-bottom__question">Как долго займет ремонт?</p>
+                    <p class="faq-bottom__text">
+                        Срок ремонта зависит от сложности поломки и наличия необходимых запасных&nbsp;частей. В среднем, срок ремонта составляет от 1 до 10 рабочих дней. Однако, в некоторых случаях, срок ремонта&nbsp;может быть продлен в связи с отсутствием запасных частейна складе или другими обстоятельствами. Мы стремимся сделать ремонт максимально быстрым и качественным, чтобы вернуть ваш товар вам как можно скорее.
                     </p>
                 </li>
             </ul>
         </div>
     </section>
 
-    <div class="footer">
-        <div class="footer__content container-box">
-            <div class="footer__logo">
-                <a href="./index.html">
-                    <img src="/assets/images/main-page/logo-footer.svg" alt="логотип Yamaguchi Sevice">
-                </a>
+    <section class="footer">
+        <div class="footer__container-box container-box">
+
+            <h3 class="footer__title">Сервисный центр yamaguchi</h3>
+
+            <div class="footer__reference">
+                <a class="footer__mobile" href="tel: +78002223906">7 (800) 222-39-06</a>
+                <a class="footer__web" href="yamaguchi-service-remont.ru">yamaguchi-service-remont.ru</a>
+    
+                <span class="footer__hours-string">Пн-пт:&nbsp;с&nbsp;9.00&nbsp;до&nbsp;18.00 Сб:&nbsp;9.00-17.00</span>
             </div>
-            <div class="footer__phone">
-                <p>Телефон для справок</p>
-                <a href="tel: +78002223906">7 800 222 39 06</a>
-            </div>
-            <nav class="footer__menu">
-                <ul class="footer__menu-list">
-                    <li><a class="footer__text" href="#contacts">Контакты</a></li>
-                    <li><a class="footer__text" href="/pages/guarantees.html">Гарантии</a></li>
-                    <li><a class="footer__text" href="/pages/traid-in.html"> Trade-in</a></li>
-                    <li><a class="footer__text" href="/pages/delivery.html">Доставка</a></li>
-                    <li><a class="footer__text" href="/pages/about.html">О нас</a></li>
-                </ul>
-            </nav>
-            <div class="footer__hours">
-                <p class="footer__text"> Часы работы офиса: <br> пн.–пт. с 9:00 до 19:00</p>
-            </div>
-            <div class="footer__cards">
-                <p class="footer__text">Принимаем к оплате</p>
-                <ul class="footer__payment-list">
-                    <li>
-                        <img src="/assets/images/main-page/icon_visa.svg" alt="логотип платежной системы Visa">
-                    </li>
-                    <li>
-                        <img src="/assets/images/main-page/icon_mastercard.svg"
-                            alt="логотип платежной системы Master Card">
-                    </li>
-                    <li>
-                        <img src="/assets/images/main-page/icon_mir.svg" alt="логотип платежной системы Мир">
-                    </li>
-                </ul>
-            </div>
+
+
+            <ul class="footer__payment-list">
+                <li class="footer__payment-list-item footer__payment-list-item_visa">
+                    <img class="footer__img" src="/assets/images/main-page/icon_visa.svg" alt="Visa">
+                </li>
+                <li class="footer__payment-list-item footer__payment-list-item_master-card">
+                    <img class="footer__img" src="/assets/images/main-page/icon_mastercard.svg" alt="Master Card">
+                </li>
+                <li class="footer__payment-list-item footer__payment-list-item_mir">
+                    <img class="footer__img" src="/assets/images/main-page/icon_mir.svg" alt="Мир">
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
 
     <div class="modal-thanks modal-thanks__overlay ">
         <div class="modal-thanks__content">
@@ -847,7 +786,7 @@
                     Спасибо!
                 </h4>
                 <span class="modal-thanks__close">
-                    &#10006;
+                    &#1000;
                 </span>
             </div>
             <p class="modal-thanks__subtitle">
