@@ -1821,7 +1821,7 @@ body {
     }
 }
 
-.trade-in {
+.exchange {
     background-color: #BCF0AC;
     padding: 18px 0;
 
@@ -1830,7 +1830,7 @@ body {
         padding-bottom: 8.13vw;
     }
     
-    // .trade-in__container-box
+    // .exchange__container-box
     
     &__container-box {
         position: relative;
@@ -1841,7 +1841,7 @@ body {
         }
     }
 
-    // .trade-in__wrapper-img
+    // .exchange__wrapper-img
 
     &__wrapper-img {   
         width: 156px;
@@ -1860,14 +1860,14 @@ body {
         }
     }
 
-    // .trade-in__img
+    // .exchange__img
 
     &__img {
         width: 100%;
         height: 100%;
     }
 
-    // .trade-in__text
+    // .exchange__text
     
     &__text {
         width: 679px;
@@ -1965,13 +1965,15 @@ body {
 
     &__container-box {
         display: grid;
-        grid-template-columns: 1.9fr 1.3fr;
+        grid-template-columns: 715px 490px;
         gap: 20px;
         grid-template-areas:
             'titl titl'
             'brands phone'
             'hours form'
-            'trade-in form';
+            'trade-in form'
+            'text text'
+            ;
 
         @include nmd {
             grid-template-columns: 1fr;
@@ -2225,7 +2227,7 @@ body {
         font-family: 'OpenSans';
         font-weight: 100;
         font-size: 22px;
-        line-height: 27px;
+        line-height: 1;
         color: #939393;
         height: 58px;
         padding-left: 24px;
@@ -2515,6 +2517,8 @@ body {
         font-size: 22px;
         font-weight: 600;
         text-align: center;
+        grid-area: text;
+        margin: auto;
         @include nsm {
             width: 100%;
             font-size: 4.28vw;
@@ -2723,8 +2727,8 @@ body {
                 background-color: #000000;
 
                 @include nsm {
-                    width: 0.46vw;
-                    height: 0.46vw;
+                    width: .66vw;
+                    height: .66vw;
                 }
             }
 
@@ -2810,6 +2814,10 @@ body {
             width: 93%;
             position: relative;
             left: 11px;
+
+            @include nsm {
+                width: 89%;
+            }
 		}
 
 		// .guarantees__getting-list-item
@@ -2844,8 +2852,8 @@ body {
                 background-color: #000000;
 
                 @include nsm {
-                    width: 0.46vw;
-                    height: 0.46vw;
+                    width: .66vw;
+                    height: .66vw;
                 }
             }
 
@@ -2854,6 +2862,11 @@ body {
             &_application {
                 &::before{
                     left: 17px;
+
+                    @include nsm {
+                        left: 8vw;
+                        top: 2vw;
+                    }
                 }
             }
 
@@ -2862,6 +2875,11 @@ body {
             &_information {
                 &::before{
                     left: -6px;
+
+                    @include nsm {
+                        left: 3vw;
+                        top: 2vw;
+                    }
                 }
             }
 
@@ -2870,6 +2888,11 @@ body {
             &_problem {
                 &::before{
                     left: -4px;
+
+                    @include nsm {
+                        left: 3.2vw;
+                        top: 2.5vw;
+                    }
                 }
             }
 
@@ -2878,6 +2901,11 @@ body {
             &_agreement {
                 &::before{
                     left: -5px;
+
+                    @include nsm {
+                        left: 4vw;
+                        top: 2vw;
+                    }
                 }
             }        
 		}
@@ -2914,7 +2942,7 @@ body {
             font-family: 'OpenSans';
             z-index: 1;
             @include nsm {
-                margin-bottom: 7.81vw;
+                margin-bottom: 9.31vw;
                 font-size: 4.68vw;
             }
 
@@ -2958,11 +2986,15 @@ body {
 
 		&__important-list {
             width: 88%;
+            @include nsm {
+                width: 85%;
+            }
 		}
 
 		// .guarantees__important-list-item
 
 		&__important-list-item {
+            position: relative;
             margin-bottom: 30px;
             font-size: 20px;
             font-weight: 400;
@@ -2973,12 +3005,68 @@ body {
             }
 
             @include nsm {
-                margin-bottom: 6.25vw;
+                margin-bottom: 5.15vw;
                 font-size: 4.38vw;
                 line-height: 1.4;
             }
 
-		}
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                top: 12px;
+                background-color: #000000;
+
+                @include nsm {
+                    width: .66vw;
+                    height: .66vw;
+                }
+		    }
+
+            // .guarantees__important-list-item_damage
+
+            &_damage {
+                &::before{
+                    top: 8px;
+                    left: -1px;
+                    @include nsm{
+                        top: 2.7vw;
+                        left: 8vw;
+                    }
+                }
+            }
+    
+            // .guarantees__important-list-item_authorised
+    
+            &_authorised {
+                &::before{
+                    top: 8px;
+                    left: -1px;
+                    @include nsm{
+                        top: 3vw;
+                        left: 0vw;
+                    }
+                }
+            }
+    
+            // .guarantees__important-list-item_exploitation
+    
+            &_exploitation {
+                &::before{
+                    top: 8px;
+                    left: -1px;
+                    @include nsm{
+                        top: 2vw;
+                        left: 11vw;
+                    }
+                }
+            }
+    
+        }
+    
 }
 
 .faq {
@@ -2986,6 +3074,8 @@ body {
     font-family: 'OpenSans';
 
     @include nsm {
+        padding-top: 2.3vw;
+        padding-bottom: 0;
     }
 
     &__title {
@@ -3000,7 +3090,9 @@ body {
 
         @include nsm {
             font-size: 7.5vw;
-            margin-bottom: 6.25vw;
+            margin-bottom: 4.85vw;
+            line-height: 1.5;
+            letter-spacing: -.1vw;
         }
     }
 
@@ -3024,9 +3116,11 @@ body {
         color: #383838;
 
         @include nsm {
-            width: 73.44vw;
+            display: block;
+            position: relative;
+            width: 89%;
             font-size: 4.38vw;
-            padding-right: 50px;
+            line-height: 1.6;
         }
 
         &::after {
@@ -3038,6 +3132,14 @@ body {
             background-image: url('/assets/images/main-page/arrow-black.svg');
             transform: rotate(90deg);
             transition: transform 0.2s ease-in;
+
+            @include nsm {
+                position: absolute;
+                width: 3.2vw;
+                height: 5.3vw;
+                top: 0;
+                right: -8.3vw;
+            }
         }
     }
 
@@ -3060,6 +3162,10 @@ body {
         line-height: 110.69%;
         color: #383838;
         transition: all 0.2s linear;
+
+        @include nsm {
+            font-size: 0;
+        }
     }
 
     &__item:not(:last-of-type) {
@@ -3093,15 +3199,12 @@ body {
         transition: all 0.2s linear;
         max-height: 0;
 
-        @include nmd {
-            font-size: 20px;
-            line-height: 130%;
-        }
-
-        @include nxxs {
-            font-size: 14px;
-            margin-left: -15px;
-            margin-top: 18px;
+        @include nsm {
+            font-size: 4.38vw;
+            line-height: 1.5;
+            margin-top: 4.69vw;
+            margin-bottom: 6.25vw;
+            width: 92%;
         }
 
         // .faq__text_max-width
@@ -3114,6 +3217,423 @@ body {
     &__text-bold{
         font-weight: 900;
     }
+}
+
+.trade-in {
+    padding-top: 66px;
+    padding-bottom: 62px;
+    background-image: linear-gradient(128.69deg,#ffd88f 11.69%,#ffd27d 87.28%);
+
+    @include nsm {
+        padding-top: 8.13vw;
+        padding-bottom: 16.88vw;
+    }
+
+
+    // .trade-in__container-box
+
+    &__container-box {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @include nsm {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+    // .trade-in__title
+
+    &__title {
+        width: 100%;
+        margin-bottom: 43px;
+        font-size: 52px;
+        font-family: 'OpenSans';
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include nsm {
+            order: 1;
+            margin-bottom: 6.25vw;
+            font-size: 7.81vw;
+        }
+    }
+
+    // .trade-in__content-block
+
+    &__content-block {
+
+        // .trade-in__content-block_top
+
+        &_top {
+            width: 562px;
+            margin-right: 61px;
+
+            @include nsm {
+                order: 2;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 6.25vw;
+            }
+        }
+
+        // .trade-in__content-block_bottom
+
+        &_bottom {
+            width: 655px;
+            margin-left: 520px;
+            margin-bottom: 151px;
+
+            @include nsm {
+                order:4;
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 6.25vw;
+            }
+        }
+    }
+
+    // .trade-in__block-title
+
+    &__block-title {
+        margin-bottom: 14px;
+        font-size: 33px;
+        font-family: 'OpenSans';
+        font-weight: 700;
+
+        @include nsm {
+            font-size: 5vw;
+            margin-bottom: 4.69vw;
+        }
+    }
+
+    // .trade-in__content-text
+
+    &__content-text {
+        width: 97%;
+
+        @include nsm {
+            width: 100%;
+        }
+    }
+
+    // .trade-in__text-item
+
+    &__text-item {
+        font-size: 20px;
+        font-family: 'OpenSans';
+        font-weight: 400;
+        margin-bottom: 38px;
+        line-height: 1.6;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        @include nsm {
+            font-size: 4.38vw;
+            margin-bottom: 4.69vw;
+        }
+
+
+
+        // .trade-in__text-item_bold
+
+        &_bold {
+            font-size: 33px;
+            font-weight: 700;
+            line-height: 1.45;
+
+            @include nsm {
+                font-size: 5vw;
+            }
+        }
+    }
+
+    // .trade-in__wrapper-img
+
+    &__wrapper-img {
+        overflow: hidden;
+
+        // .trade-in__wrapper-img_top
+
+        &_top {
+            width: 557px;
+            height: 516px;
+            border-radius: 7px;
+            margin-bottom: 118px;
+
+            @include nsm {
+                order: 3;
+                height: 86.25vw;
+                width: 100%;
+                border-radius: 1.56vw;
+                margin-bottom: 7.81vw;
+            }
+        }
+
+        // .trade-in__wrapper-img_bottom
+
+        &_bottom {
+            position: absolute;
+            left: 3px;
+            top: 610px;
+            width: 424px;
+            height: 453px;
+            border-radius: 10px;
+
+            @include nsm {
+                order: 5;
+                position: static;
+                height: 100vw;
+                margin-bottom: 9.38vw;
+                width: 100%;
+                border-radius: 1.56vw;
+            }
+        }
+    }
+
+    // .trade-in__img
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    // .trade-in__form-wrapper
+
+    &__form-wrapper {
+        width: 100%;
+        background-color: #BCF0AC;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        padding: 31px 37px 50px;
+
+        @include nsm {
+            order: 6;
+        }
+    }
+
+    // .trade-in__form-wrapper-title
+
+    &__form-wrapper-title {
+        width: 100%;
+        margin-bottom: 27px;
+        font-size: 36px;
+        font-family: 'OpenSans';
+        font-weight: 700;
+    }
+
+    // .trade-in__form
+
+    &__form {
+        width: 611px;
+    }
+
+    // .trade-in__input-wrapper
+
+    &__input-wrapper {
+        margin-bottom: 16px;
+
+        // .trade-in__input-wrapper_name
+
+        &_name {
+        }
+
+        // .trade-in__input-wrapper_tel
+
+        &_tel {
+        }
+
+        // .trade-in__input-wrapper_email
+
+        &_email {
+        }
+
+        // .trade-in__input-wrapper_checkbox
+
+        &_checkbox {
+            display: flex;
+            align-items: center;
+            column-gap: 14px;
+            position: relative;
+            margin-bottom: 30px;
+            @include nsm {
+                align-items: flex-start;
+                column-gap: 2.81vw;
+                margin-bottom: 8.13vw;
+            }
+        }
+    }
+
+    // .trade-in__input
+
+    &__input {
+        width: 100%;
+        border-radius: 7px;
+        font-family: 'OpenSans';
+        font-weight: 100;
+        font-size: 22px;
+        line-height: 1;
+        color: #939393;
+        height: 70px;
+        padding-left: 24px;
+        border: none;
+
+        @include nmd {
+            height: 48px;
+        }
+
+        @include nsm {
+            font-size: 3.5vw;
+            padding-left: 5.5vw;
+        }
+
+        @include nxs {
+            font-size: 5.3vw;
+        }
+        // .trade-in__input_name
+
+        &_name {
+        }
+
+        // .trade-in__input_tel
+
+        &_tel {
+        }
+
+        // .trade-in__input_email
+
+        &_email {
+        }
+
+        // .trade-in__input_checkbox
+
+        &_checkbox {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    }
+
+    // .trade-in__err
+
+    &__err {
+        display: none;
+        position: absolute;
+        left: 27px;
+        bottom: 0px;
+        color: $YRed;
+    
+        @include nsm {
+            left: 3%;
+            font-size: 3vw;
+        }
+
+        // .trade-in__err_checkbox
+
+        &_checkbox {
+            display: none;
+            padding-left: 25px;
+            position: relative;
+            color: $YRed;
+
+            @include nsm {
+
+            }
+        }
+    }
+
+    // .trade-in__wrapper-checkbox
+
+    &__wrapper-checkbox{
+        width: 44px;
+        height: 32px;
+
+        @include nsm {
+            width: 5.31vw;
+            height: 5.31vw;
+        }
+    }
+
+    // .trade-in__img-checkbox
+
+    &__img-checkbox{
+        width: 100%;
+        height: 100%;
+
+        // .trade-in__img-checkbox_rejection
+
+        &_rejection{
+
+        }
+
+        // .trade-in__img-checkbox_approval
+
+        &_approval{
+
+        }
+    }
+
+    // .trade-in__input-label
+
+    &__input-label {
+        font-family: 'OpenSans';
+        font-size: 16.7px;
+        font-weight: 300;
+        line-height: 1.4;
+        color: #383838;
+
+        @include nsm {
+            width: 100%;
+            font-size: 4.38vw;
+        }
+    }
+
+    // .trade-in__form-button
+
+    &__form-button {
+        background: #383838;
+        width: 100%;
+        height: 70px;
+        border-radius: 7px;
+        font-family: 'OpenSans';
+        color: #fff;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 100%;
+        cursor: pointer;
+        transition: 0.2s linear;
+
+        &:hover {
+            background-color: $YRealWhite;
+            color: $YBlack;
+        }
+
+        @include nsm {
+            height: 16.56vw;
+            border-radius: 1.58vw;
+            font-size: 4.69vw;
+        }
+    }
+
+    // .trade-in__form-img
+
+    &__form-img {
+        width: 507px;
+        height: 406px;
+        overflow: hidden;
+        border-radius: 14px;
+
+        @include nsm {
+            display: none;
+        }
+    }
+
 }
 
 
@@ -3922,7 +4442,7 @@ body {
     &__subtitle {
         font-weight: 800;
         font-size: 16px;
-        line-height: 27px;
+        line-height: 1;
         margin-bottom: 10px;
     }
 

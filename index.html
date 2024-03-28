@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"> 
 
 <head>
     <meta charset="UTF-8">
@@ -361,12 +361,12 @@
         </div>
     </section>
 
-    <section class="trade-in">
-        <div class="trade-in__container-box container-box">
-            <div class="trade-in__wrapper-img">
-                <img class="trade-in__img" src="./assets/images/main-page/yamaguchi-x.webp" alt="">
+    <section class="exchange">
+        <div class="exchange__container-box container-box">
+            <div class="exchange__wrapper-img">
+                <img class="exchange__img" src="./assets/images/main-page/yamaguchi-x.webp" alt="">
             </div>
-            <p class="trade-in__text">Также обменяем Ваше старое массажное кресло на новое со скидкой в Trade-in</p>
+            <p class="exchange__text">Также обменяем Ваше старое массажное кресло на новое со скидкой в Trade-in</p>
         </div>    
     </section>
 
@@ -518,9 +518,9 @@
                     <h4 class="guarantees__important-title">Важно</h4>
                     <p class="guarantees__important-text">Гарантия аннулируется, если:</p>
                     <ul class="guarantees__important-list">
-                        <li class="guarantees__important-list-item">Кресло было повреждено в результате механического воздействия</li>
-                        <li class="guarantees__important-list-item">Кресло было отремонтировано не&nbsp;<br class="mob-show">в&nbsp;authorised сервисном<br class="desk-show">центре</li>
-                        <li class="guarantees__important-list-item">Были нарушены правила эксплуатации</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_damage">Кресло было повреждено в результате механического воздействия</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_authorised">Кресло было отремонтировано не&nbsp;<br class="mob-show">в&nbsp;authorised сервисном<br class="desk-show">центре</li>
+                        <li class="guarantees__important-list-item guarantees__important-list-item_exploitation">Были нарушены правила эксплуатации</li>
                     </ul>
                 </div>
             </div>
@@ -533,7 +533,7 @@
             <ul class="faq__list">
                 <li class="faq__item">
                     <p class="faq__question">Что делать, если я обнаружил неисправность в работе массажного кресла?</p>
-                    <p class="faq__text faq__text_max-width">Свяжитесь с нами по телефону <b class="faq__text-bold">+7 (495)123-45-67</b> или электронной почте [удаленный электронный адрес].</p>
+                    <p class="faq__text faq__text_max-width">Свяжитесь с нами по телефону <b class="faq__text-bold"><br class="mob-show">+7 (495)123-45-67</b> или электронной почте [удаленный электронный адрес].</p>
                 </li>
                 <li class="faq__item">
                     <p class="faq__question">Сколько стоит ремонт массажного кресла?</p>
@@ -546,6 +546,98 @@
             </ul>
         </div>
     </section>
+
+    <section class="trade-in">
+        <div class="trade-in__container-box container-box">
+            <h3 class="trade-in__title">Trade-in</h3>
+            <div class="trade-in__content-block trade-in__content-block_top">
+                <h4 class="trade-in__block-title">Обновляться выгодно!</h4>
+                <div class="trade-in__content-text">
+                    <p class="trade-in__text-item">Обменяйте с доплатой такое привычное для Вас, но&nbsp;износившееся массажное кресло на новое, инновационное с большим усовершенствованным функционалом. Это отличная возможность сэкономить на покупке нового кресла и не думать об утилизации старого оборудования.</p>
+                    <p class="trade-in__text-item trade-in__text-item_bold">Обменяем Ваше старое массажное кресло на новое со&nbsp;скидкой в Trade-in</p>
+                </div>
+            </div>
+            <div class="trade-in__wrapper-img trade-in__wrapper-img_top">
+                <img class="trade-in__img" src="./assets/images/main-page/trade-in-top.webp" alt="Axiom">
+            </div>
+            <div class="trade-in__wrapper-img trade-in__wrapper-img_bottom">
+                <img class="trade-in__img" src="./assets/images/main-page/trade-in-bottom.webp" alt="Xi">
+            </div>
+            <div class="trade-in__content-block trade-in__content-block_bottom">
+                <h4 class="trade-in__block-title">Trade-in – это очевидная выгода!</h4>
+                <div class="trade-in__content-text">
+                    <p class="trade-in__text-item">Оценка старого массажного кресла производится нашим специалистом, окончательная стоимость зависит от 2 видов износа - физический (исправность, комплектация, внешний вид), функциональный (функциональность кресла по отношению к современным аналогам).</p>
+                </div>
+            </div>
+
+            <div class="trade-in__form-wrapper">
+                <h3 class="trade-in__form-wrapper-title">Оформить заявку на Trade-in</h3>
+                
+                <form class="trade-in__form">
+
+                        <div class="trade-in__input-wrapper trade-in__input-wrapper_name __js__input-wrapper">
+                            <input 
+                                class="trade-in__input trade-in__input_name __js__input" 
+                                title="Имя должно содержать больше двух букв" 
+                                type="text" 
+                                name="name" 
+                                placeholder="Имя"  
+                                pattern = "[A-Za-zА-яа-я]{2,}"  
+                                required
+                            >
+                            <p class="trade-in__err __js__err">Пожалуйста, введите Ваше имя</p>
+                        </div>
+                        <div class="trade-in__input-wrapper trade-in__input-wrapper_tel __js__input-wrapper">
+                            <input 
+                                class="trade-in__input trade-in__input_tel __js__input" 
+                                type="text" 
+                                name="tel" 
+                                id="tel" 
+                                pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+                                placeholder="Телефон для связи"
+                                required
+                            >
+                            <p class="trade-in__err __js__err">Ввведите номер телефона</p>
+                        </div>
+                        <div class="trade-in__input-wrapper trade-in__input-wrapper_email __js__input-wrapper"> 
+                            <input 
+                                class="trade-in__input trade-in__input_email __js__input" 
+                                type="text" 
+                                name="email" 
+                                id="email" 
+                                placeholder="e-mail" 
+                                pattern="\S+\.[a-z]{2,4}$" 
+                                required
+                            >
+                            <p class="trade-in__err __js__err">Введите корректный адрес электронной почты</p>
+                        </div>
+
+                        <div class="trade-in__input-wrapper trade-in__input-wrapper_checkbox __js__input-wrapper">
+                            <input 
+                                class="trade-in__input trade-in__input_checkbox __js__input" 
+                                type="checkbox" 
+                                name="policy" 
+                                id="policy" 
+                                required
+                            >
+                            <div class="trade-in__wrapper-checkbox">
+                                <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt="" class="trade-in__img-checkbox trade-in__img-checkbox_rejection hide">
+                                <img src="./assets/images/main-page/checkbox-approval-icon.svg" alt="" class="trade-in__img-checkbox trade-in__img-checkbox_approval">
+                            </div>
+                            <label class="trade-in__input-label" for="policy">Я ознакомлен(а) с  политикой конфиденциальности и даю  согласие на обработку персональных данных</label>
+                            <p class="trade-in__err trade-in__err_checkbox __js__err">Пожалуйста, ознакомьтесь с Политикой конфиденциальности</p>
+                        </div>
+                    <button class="trade-in__form-button _disabled" type="button">Отправить заявку</button>
+                </form>
+
+                <div class="trade-in__form-img">
+                    <img class="trade-in__img" src="/assets/images/main-page/trade-in-form-desk.webp" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
     <!-- <section class="advantages">
         <div class="advantages__content container-box">
