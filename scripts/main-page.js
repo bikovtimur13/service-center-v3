@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //city choice
 
     function handleClickOverLay(event) {
-        if (event.target.classList.contains('header__list') || event.target === SELECTED_CITY) return;
+        if (event.target.classList.contains('header__list-item') || event.target === SELECTED_CITY) return;
         closeCityList();
     }
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function chooseMobCity() {
-        document.querySelectorAll('.header__list').forEach(e => {
+        document.querySelectorAll('.header__list-item').forEach(e => {
             const city = e;
             city.addEventListener('click', () => {
                 SELECTED_CITY.textContent = city.dataset.city;
@@ -105,9 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
     SELECTED_CITY.forEach(elem => elem.addEventListener('click', (e) => checkWindowWidth(e.target)));
 
     function chooseCity() {
-        document.querySelectorAll('.header__list').forEach(e => {
+        document.querySelectorAll('.header__list-item').forEach(e => {
             const city = e;
             city.addEventListener('click', () => {
+                debugger
                 SELECTED_CITY.textContent = city.dataset.city;
                 currentCity = city.dataset.city;
                 localStorage.setItem('city', city.dataset.city);
