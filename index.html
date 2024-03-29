@@ -32,6 +32,7 @@
             <div class="header__above-header">
                 <a class="header__mobile" href="tel: +78002223906">7 (800) 222-39-06</a>
 
+                <!-- Десктопная версия списка -->
                 <div class="header__city-choice">
                     <div class="header__selected-city">Москва</div>
                     <ul class="header__city-suggest">
@@ -99,8 +100,9 @@
                             <li class="header__menu-item header__menu-item_mob mob-show">
                                 <a class="header__tel-mob" href="tel: +78002223906">7 (800) 222-39-06</a>
 
+                                <!-- Мобильная версия списка -->
                                 <div class="header__city-choice-mob">
-                                    <div class="header__selected-city header__selected-city_mob">Москва</div>
+                                    <div class="header__selected-city-mob">Москва</div>
                                     <ul class="header__city-suggest header__city-suggest_mob">
                                         <li class="header__list-item" data-city="Аксай">Аксай</li>
                                         <li class="header__list-item" data-city="Анапа">Анапа</li>
@@ -126,6 +128,8 @@
                                         <li class="header__list-item" data-city="Санкт-Петербург">Санкт-Петербург</li>
                                         <li class="header__list-item" data-city="Таганрог">Таганрог</li>
                                     </ul>
+                                </div>
+                                <div class="js-cities__list">
                                 </div>
                             </li>
                         </ul>
@@ -294,7 +298,7 @@
                 </div>
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input class="application-form__input __js__input" type="tel" name="tel"
+                    <input class="application-form__input application-form__input_tel __js__input" type="tel" name="tel"
                         placeholder="Телефон для связи" required
                         pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
                     <p class="application-form__err __js__err">Пожалуйста, введите номер телефона</p>

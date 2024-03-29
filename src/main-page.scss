@@ -304,31 +304,31 @@ body {
             width: 13px;
         }
 
-        // .header__selected-city_mob
+    }
+    // .header__selected-city-mob
 
-        &_mob {
-            &::before {
-                @include nsm {
-                    content: '';
-                    display: flex;
-                    width: 4.38vw;
-                    height: 5.94vw;
-                    position: static;
-                    background: url('/assets/images/main-page/location.svg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-            }
-
+    &__selected-city-mob {
+        &::before {
             @include nsm {
-                position: relative;
-                width: fit-content;
+                content: '';
                 display: flex;
-                align-items: center;
-                column-gap: 2.81vw;
-                font-size: 4.69vw;
+                width: 4.38vw;
+                height: 5.94vw;
+                position: static;
+                background: url('/assets/images/main-page/location.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
             }
+        }
+
+        @include nsm {
+            position: relative;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            column-gap: 2.81vw;
+            font-size: 4.69vw;
         }
     }
 

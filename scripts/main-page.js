@@ -1,7 +1,9 @@
 // console.log(title.innerHTML);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const SELECTED_CITY = document.querySelectorAll('.header__selected-city');
+    const SELECTED_CITY = document.querySelector('.header__selected-city');
+    const SELECTED_CITY_MOB = document.querySelector('.header__selected-city-mob');
+
     let currentCity = SELECTED_CITY.textContent;
     const CITY_LIST = document.querySelector('.header__city-suggest');
     let wrapper = document.querySelector('.header__wrapper');
@@ -15,6 +17,61 @@ document.addEventListener('DOMContentLoaded', () => {
     let body = document.body;
     const IS_MOBILE = window.matchMedia('(max-width: 767px)').matches;
 
+    class CityList{
+        listCities
+        cityItem
+        constructor(
+            listSelector,
+            itemSelector,
+            arrCities
+        ){
+            this.arrCities = arrCities;
+            // this.wrapperList = document.querySelector(`.${listSelector}`);
+            // this.item
+        }
+
+        createList() {
+            this.listCities = document.createElement('ul');
+            this.listCities.classList.add(`.${listSelector}`);
+            const listcity = this.arrCities.map(city => {
+                this.cityItem = document.createElement('li');
+                this.cityItem.classList.add(`.${itemSelector}`);
+                this.cityItem.append(city);
+                this.cityItem.dataset.city = city;
+                console.log(this)
+            })
+        }
+    }
+
+    const MODAL_CITY_LIST = new CityList(
+        'list-cities',
+        'list-cities__item',
+        [
+            'Аксай',
+            'Анапа',
+            'Ангарск',
+            'Армавир',
+            'Архангельск',
+            'Астрахань',
+            'Барнаул',
+            'Белгород',
+            'Владивосток',
+            'Геленджик',
+            'Дзержинск',
+            'Евпатория',
+            'Иваново',
+            'Йошкар-Ола',
+            'Казань',
+            'Липецк',
+            'Москва',
+            'Набережные Челны',
+            'Одесса',
+            'Пенза',
+            'Ростов-на-Дону',
+            'Санкт-Петербург',
+            'Таганрог'
+        ]
+    );
 
     if (localStorage['city']) SELECTED_CITY.textContent = localStorage.getItem('city');
 
@@ -54,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const appendCityList = () => {
         let list = CITY_LIST.cloneNode(true);
+        debugger
         mobCityList.after(list);
     };
 
@@ -102,13 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    SELECTED_CITY.forEach(elem => elem.addEventListener('click', (e) => checkWindowWidth(e.target)));
+    SELECTED_CITY.addEventListener('click', (e) => checkWindowWidth(e.target));
 
     function chooseCity() {
         document.querySelectorAll('.header__list-item').forEach(e => {
             const city = e;
             city.addEventListener('click', () => {
-                debugger
                 SELECTED_CITY.textContent = city.dataset.city;
                 currentCity = city.dataset.city;
                 localStorage.setItem('city', city.dataset.city);
@@ -346,9 +403,14 @@ document.addEventListener('DOMContentLoaded', () => {
     //     hideUnhideMenuOnScroll();
 
 
+
     class ValidationForm {
-        constructor(form) {
-            this.form = form;
+        constructor(
+            formSelector,
+            telSelector,
+            ) {
+            this.form = document.querySelector(`.${formSelector}`);
+            this.phone = this.form.querySelector(`.${telSelector}`);
             this.inputWrappers = this.form.querySelectorAll('div');
             this.button = this.form.querySelector('button');
             this.inputs = this.form.querySelectorAll('.__js__input');
@@ -372,8 +434,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const phoneOptions = {
                 mask: '+{7} (000) 000-00-00',
             };
-
-            new IMask(this.tel, phoneOptions);
+            debugger
+            new IMask(this.phone, phoneOptions);
 
             this.inputWrappers.forEach(wrapper => {
                 const input = wrapper.querySelector('input');
@@ -454,10 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.json()
                 })
                 .then(data => {
-    console.log(data);
                     var orderNumberElement = document.querySelector('.__js__order-number');
-
-// Установить значение элемента
+                    // Установить значение элемента
                     orderNumberElement.textContent = data.id;
 
                     this.showModal();
@@ -483,9 +543,153 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    new ValidationForm(document.querySelector('.contacts__form')).initForm();
-    new ValidationForm(document.querySelector('.application-form__form')).initForm();
 
+
+
+    // class ValidationForm {
+    //     constructor(formSelector) {
+    //         this.form = document.querySelector(`.${formSelector}`);
+    //         this.inputWrappers = this.form.querySelectorAll('div');
+    //         this.button = this.form.querySelector('button');
+    //         this.inputs = this.form.querySelectorAll('.__js__input');
+    //         this.modalThanks = document.querySelector('.modal-thanks__overlay');
+    //         this.modalCloseButton = document.querySelector('.modal-thanks__close');
+    //         this.inputs.forEach(element => {
+    //             if (element.name == 'name') {
+    //                 this.name = element
+    //             } else if (element.name == 'tel') {
+    //                 this.tel = element
+    //             } else if (element.name == 'email') {
+    //                 this.email = element
+    //             } else if (element.name == 'message') {
+    //                 this.message = element
+    //             }
+    //         })
+    //     }
+
+    //     initForm() {
+
+    //         const phoneOptions = {
+    //             mask: '+{7} (000) 000-00-00',
+    //         };
+
+    //         new IMask(this.tel, phoneOptions);
+
+    //         this.inputWrappers.forEach(wrapper => {
+    //             const input = wrapper.querySelector('input');
+    //             const errText = wrapper.querySelector('p');
+    //             input.addEventListener('input', (event) => this.handleInputChanges(event, input, errText));
+    //             input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
+    //         })
+
+    //         this.button.addEventListener('click', (event) => {
+    //             event.preventDefault();
+    //             let isValid = this.form.checkValidity()
+    //             if (isValid) {
+    //                 this.sendForm(event);
+    //             }
+    //         })
+    //     }
+
+    //     setBtnDisabled() {
+    //         this.button.disabled = true;
+    //         this.button.classList.add('_disabled');
+    //     }
+
+    //     setBtnActive() {
+    //         this.button.disabled = false;
+    //         this.button.classList.remove('_disabled');
+    //     }
+
+    //     handleInputChanges = (event, input, errText) => {
+    //         (this.form.checkValidity()) ? this.setBtnActive() : this.setBtnDisabled();
+
+    //         if (input.validity.valid && errText.classList.contains('_unhide')) {
+    //             errText.classList.remove('_unhide');
+    //         }
+
+    //     }
+
+    //     handleInputBlur = (event, input, errText) => {
+    //         if (!input.validity.valid) {
+    //             errText.classList.add('_unhide');
+    //         }
+    //     }
+
+    //     sendForm(event) {
+    //         let formData = new FormData(this.form);
+
+    //         const firstForm = document.querySelector('.application-form__container-form')
+    //         const secondForm = document.querySelector('.contacts__form')
+
+    //         const elementsFirstForm = firstForm.elements
+    //         const elementsSecondForm = secondForm.elements
+
+    //         for (let i = 0; i < elementsFirstForm.length; i++) {
+    //             elementsFirstForm[i].setAttribute('disabled', 'true');
+    //             this.button.classList.add('_disabled');
+    //         }
+            
+    //         for (let i = 0; i < elementsSecondForm.length; i++) {
+    //             elementsSecondForm[i].setAttribute('disabled', 'true');
+    //             this.button.classList.add('_disabled');
+    //         }
+
+    //         fetch('/post.php', {
+    //             method: 'POST',
+    //             body: formData,
+    //             headers: {
+    //                 'Access-Control-Allow-Origin': "*"
+    //             }
+    //         }).then(response => {
+    //             for (let i = 0; i < elementsFirstForm.length; i++) {
+    //                 elementsFirstForm[i].removeAttribute('disabled');
+    //                 this.button.classList.remove('_disabled');
+    //             }
+    //             for (let i = 0; i < elementsSecondForm.length; i++) {
+    //                 elementsSecondForm[i].removeAttribute('disabled');
+    //                 this.button.classList.remove('_disabled');
+    //             }
+
+    //                 return response.json()
+    //             })
+    //             .then(data => {
+    //                 var orderNumberElement = document.querySelector('.__js__order-number');
+    //                 // Установить значение элемента
+    //                 orderNumberElement.textContent = data.id;
+
+    //                 this.showModal();
+    //                 this.form.reset();
+    //             })
+    //             .catch(err => {
+    //                 console.log(err);
+    //             })
+    //     }
+
+
+    //     hideModal() {
+    //         this.modalThanks.addEventListener('click', (e) => {
+    //             if (e.target === e.currentTarget || e.target.classList.contains('modal-thanks__close')) {
+    //                 this.modalThanks.classList.remove('modal-thanks__overlay_active');
+    //             }
+    //         });
+    //     }
+
+    //     showModal() {
+    //         this.modalThanks.classList.add('modal-thanks__overlay_active');
+    //         this.hideModal();
+    //     }
+    // }
+
+    // new ValidationForm(document.querySelector('.contacts__form')).initForm();
+    // new ValidationForm(document.querySelector('.application-form__form')).initForm();
+
+    debugger
+    const APPLICATION_FORM = new ValidationForm(
+        'application-form__container-form',
+        'application-form__input_tel',    
+    );
+    APPLICATION_FORM.initForm();
 })
 
 
