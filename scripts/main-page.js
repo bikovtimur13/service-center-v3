@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentCity = SELECTED_CITY.textContent;
     const CITY_LIST = document.querySelector('.header__city-suggest');
+    const CITY_BLOCK = document.querySelector('.header__city-choice');
     let wrapper = document.querySelector('.header__wrapper');
     let header = document.querySelector('.header');
     let cityTitle = document.querySelector('.service-center__city-choice__title');
@@ -20,71 +21,132 @@ document.addEventListener('DOMContentLoaded', () => {
     class CityList{
         listCities
         cityItem
+        arrCitiesElements = []
         constructor(
             listSelector,
             itemSelector,
-            arrCities
+            arrCities,
+            handlerClickItemCity,
+            selectedCity
         ){
+            this.listSelector = listSelector;
+            this.itemSelector = itemSelector;
             this.arrCities = arrCities;
-            // this.wrapperList = document.querySelector(`.${listSelector}`);
-            // this.item
+            this.handlerClickItemCity = handlerClickItemCity;
+            this.selectedCity = selectedCity;
+            this.overlay = document.createElement('div')
         }
 
         createList() {
             this.listCities = document.createElement('ul');
-            this.listCities.classList.add(`.${listSelector}`);
-            const listcity = this.arrCities.map(city => {
-                this.cityItem = document.createElement('li');
-                this.cityItem.classList.add(`.${itemSelector}`);
-                this.cityItem.append(city);
-                this.cityItem.dataset.city = city;
-                console.log(this)
+            this.listCities.classList.add(this.listSelector);
+            this.arrCities.forEach(item => {
+                this.createItemCity(item);
+                this.listCities.appendChild(this.cityItem);
             })
+            this.listCities.classList.add('hide');
+        }
+
+        createItemCity(city) {
+            this.cityItem = document.createElement('li');
+            this.cityItem.classList.add(this.itemSelector);
+            this.cityItem.append(city);
+            this.cityItem.dataset.city = city;
+            this.arrCitiesElements.push(this.cityItem);
+            this.cityItem.addEventListener('click', (e) => this.handlerClickItem(e.target));
+        }
+
+        getItemCity(){
+            return this.cityItem;
+        }
+
+        getListCities() {
+            return this.listCities;
+        }
+
+        handlerClickItem(element){
+            this.handlerClickItemCity(element);
+            this.closeCityList();
+        }
+
+        handlerClickOverlay(element){
+            debugger
+            if(!element.classList.contains(this.itemSelector) && !this.selectedCity) this.closeCityList();
+        }
+
+        displayCityList(){
+            this.listCities.classList.remove('hide');
+            this.listCities.classList.add('show');
+            document.addEventListener('click', (e) => this.handlerClickOverlay(e.target))
+        }
+        
+        closeCityList(){
+            this.listCities.classList.remove('show');
+            this.listCities.classList.add('hide');
+            document.removeEventListener('click', this.handlerClickOverlay)
         }
     }
+    
+    function handlerClickItem(elementCity){
+        SELECTED_CITY.textContent = elementCity.dataset.city;
+        localStorage.setItem('city', elementCity.dataset.city);
+    }
+
+    // function handleClickOverLay(event) {
+    //     if (event.target.classList.contains('header__list-item') || event.target === SELECTED_CITY) return;
+    //     closeCityList();
+    // }
+
+    const CITY_ARR = [
+        'Аксай',
+        'Анапа',
+        'Ангарск',
+        'Армавир',
+        'Архангельск',
+        'Астрахань',
+        'Барнаул',
+        'Белгород',
+        'Владивосток',
+        'Геленджик',
+        'Дзержинск',
+        'Евпатория',
+        'Иваново',
+        'Йошкар-Ола',
+        'Казань',
+        'Липецк',
+        'Москва',
+        'Набережные Челны',
+        'Одесса',
+        'Пенза',
+        'Ростов-на-Дону',
+        'Санкт-Петербург',
+        'Таганрог'
+    ]; 
 
     const MODAL_CITY_LIST = new CityList(
         'list-cities',
         'list-cities__item',
-        [
-            'Аксай',
-            'Анапа',
-            'Ангарск',
-            'Армавир',
-            'Архангельск',
-            'Астрахань',
-            'Барнаул',
-            'Белгород',
-            'Владивосток',
-            'Геленджик',
-            'Дзержинск',
-            'Евпатория',
-            'Иваново',
-            'Йошкар-Ола',
-            'Казань',
-            'Липецк',
-            'Москва',
-            'Набережные Челны',
-            'Одесса',
-            'Пенза',
-            'Ростов-на-Дону',
-            'Санкт-Петербург',
-            'Таганрог'
-        ]
+        CITY_ARR,
+        handlerClickItem,
+        SELECTED_CITY,
     );
 
+    MODAL_CITY_LIST.createList();
+
+    // TODO: добавить клик на оверлэй
+    SELECTED_CITY.addEventListener('click', () => MODAL_CITY_LIST.displayCityList());
+    
     if (localStorage['city']) SELECTED_CITY.textContent = localStorage.getItem('city');
+
+    CITY_BLOCK.appendChild(MODAL_CITY_LIST.getListCities());
+
+
 
     // const mobCities = document.querySelector('.js-cities__mob');
     const mobCities = document.querySelector('.modal-cities');
     let mobCityList = document.querySelector('.js-cities__list');
 
     //city choice
-
-    function handleClickOverLay(event) {
-        if (event.target.classList.contains('header__list-item') || event.target === SELECTED_CITY) return;
-        closeCityList();
-    }
 
     function openCityList(element) {
         element.classList.add('_active');
@@ -111,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const appendCityList = () => {
         let list = CITY_LIST.cloneNode(true);
-        debugger
         mobCityList.after(list);
     };
 
@@ -160,20 +221,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    SELECTED_CITY.addEventListener('click', (e) => checkWindowWidth(e.target));
+    // SELECTED_CITY.addEventListener('click', (e) => checkWindowWidth(e.target));
+
+    // Start refactor
 
     function chooseCity() {
-        document.querySelectorAll('.header__list-item').forEach(e => {
-            const city = e;
-            city.addEventListener('click', () => {
-                SELECTED_CITY.textContent = city.dataset.city;
-                currentCity = city.dataset.city;
-                localStorage.setItem('city', city.dataset.city);
-                SELECTED_CITY.classList.remove('_active');
-                CITY_LIST.classList.remove('_city-list_active');
+        // document.querySelectorAll('.header__list-item').forEach(e => {
+        //     const city = e;
+        //     city.addEventListener('click', () => {
+        //         currentCity = city.dataset.city;
+        //         SELECTED_CITY.textContent = city.dataset.city;
+        //         localStorage.setItem('city', city.dataset.city);
+        //         SELECTED_CITY.classList.remove('_active');
+        //         CITY_LIST.classList.remove('_city-list_active');
 
-            })
-        })
+        //     })
+        // })
     }
 
 
