@@ -16,6 +16,10 @@ html {
 body {
     background: #fff;
     color: #383838;
+
+    &.modal-open{
+        overflow: hidden;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -51,6 +55,7 @@ body {
 .hide {
     display: none !important;
 }
+
 
 .modal-thanks {
     // top: 50%;
@@ -192,7 +197,8 @@ body {
 
     &__container-box {
         @include nsm {
-            padding: 0;
+            display: flex;
+            flex-direction: column-reverse;
         }
     }
 
@@ -205,7 +211,8 @@ body {
         align-items: center;
 
         @include nsm {
-            display: none;
+            align-items: flex-start;
+            flex-direction: column;
         }
     }
 
@@ -339,7 +346,9 @@ body {
         justify-content: space-between;
         align-items: center;
 
-        @include nsm {}
+        @include nsm {
+            flex-wrap: wrap;
+        }
     }
 
     // .header__content-mob-show
@@ -498,6 +507,12 @@ body {
             font-size: 6.25vw;
             font-weight: 600;
         }
+
+        // .header__menu-item-text_uppercase
+
+        &_uppercase {
+            text-transform: uppercase;
+        }    
     }
 
 
@@ -618,22 +633,45 @@ body {
     }
 }
 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    // .overlay_list-cities
+    &_list-cities{
+        background-color: #000000;
+        opacity: .1;
+    }
+}
+
 .list-cities{
     position: absolute;
-    top: 20px;
-    left: 0px;
+    top: 30px;
+    left: -11px;
     width: 150px;
     height: 190px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 5px;
     cursor: pointer;
-    overflow-x: scroll;
-    background-color: #fff;
-    z-index: 1;
+    background: linear-gradient(128.69deg, #ffd88f 11.69%, #ffd27d 87.28%);
+    overflow: hidden;
+    overflow-y: scroll;
+    z-index: 2;
 
     &__item{
         margin-bottom: 10px;
-
+        font-family: OpenSans;
+        font-weight: 400;
+        font-size: 15px;
 
         &:last-child{
             margin-bottom: 0;
