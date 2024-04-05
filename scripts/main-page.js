@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SECTION_TRADE_IN = document.querySelector('.trade-in');
     const SECTION_FAQ = document.querySelector('.faq-bottom');
     const SECTION_APP_FORM = document.querySelector('.application-form');
-    
+
     const BUTTONS_TO_FORM = [document.querySelector('.header__button'), document.querySelector('.poster__button')];
 
     class CityList{
@@ -267,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'FAQ':
                 scrollToElement(SECTION_FAQ);
                 break;
+            default:
+                IS_MOBILE 
         }
     }))
 
