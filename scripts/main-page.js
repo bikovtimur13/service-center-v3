@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
         'Санкт-Петербург',
         'Таганрог'
     ]; 
+    const HEADER_MENU_ITEMS = document.querySelectorAll('.header__menu-item-text');
+
+    const SECTION_SERVICES = document.querySelector('.services');
+    const SECTION_CONTACTS = document.querySelector('.contacts');
+    const SECTION_GUARANTEES = document.querySelector('.guarantees');
+    const SECTION_TRADE_IN = document.querySelector('.trade-in');
+    const SECTION_FAQ = document.querySelector('.faq-bottom');
+    const SECTION_APP_FORM = document.querySelector('.application-form');
+    
+    const BUTTONS_TO_FORM = [document.querySelector('.header__button'), document.querySelector('.poster__button')];
 
     class CityList{
         listCities
@@ -109,39 +119,60 @@ document.addEventListener('DOMContentLoaded', () => {
         show(){
             this.elementForWhichOverlay.insertAdjacentElement('beforebegin', this.overlay);
             document.body.classList.add('modal-open');
-            this.overlay.addEventListener('click', () => this.handlerClickOverlay())
+            this.overlay.addEventListener('click', this.handlerClickOverlay)
         }
         hide(){
+            this.overlay.removeEventListener('click', this.handlerClickOverlay)
             this.overlay.remove();
             document.body.classList.remove('modal-open');
-            this.overlay.removeEventListener('click', this.handlerClickOverlay)
         }
     }
 
     class HeaderController{
-        constructor(selectorOpen, selectorClose, selectorMenu){
+        constructor(selectorHeader, selectorOpen, selectorClose, selectorMenu, selectorAddStyle){
+            this.header = document.querySelector(`.${selectorHeader}`);
             this.openIcon = document.querySelector(`.${selectorOpen}`);
             this.closeIcon = document.querySelector(`.${selectorClose}`);
             this.menu = document.querySelector(`.${selectorMenu}`);
-
+            this.additionalStyle = selectorAddStyle;
         }
 
         openMenu(){
-            this.menu.classList.remove('hide');
-            this.menu.classList.add('show');
+            this.show(this.menu);
+            this.hide(this.openIcon);
+            this.show(this.closeIcon);
+            this.header.classList.add(this.additionalStyle)
         }
         
         closeMenu(){
-            this.menu.classList.remove('show');
-            this.menu.classList.add('hide');
+            this.hide(this.menu);
+            this.hide(this.closeIcon);
+            this.show(this.openIcon);
+            this.header.classList.remove(this.additionalStyle)
+        }
+
+        hide(elem){
+            elem.classList.remove('show');
+            elem.classList.add('hide');
+        }
+        show(elem){
+            elem.classList.remove('hide');
+            elem.classList.add('show');
         }
 
         getOpenIcon(){
-            return this.openIcon
+            return this.openIcon;
         }
-        
+
         getCloseIcon(){
-            return this.closeIcon
+            return this.closeIcon;
+        }
+        getMenu(){
+            return this.menu;
+        }
+
+        getHeader(){
+            return this.header;
         }
     }
 
@@ -158,33 +189,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const OVERLAY_CITY_LIST = new Overlay(
         'list-cities',
         MODAL_CITY_LIST.getListCities(),
-        clickOverlayCityList,
+        clickOverlay,
     );
 
     if(IS_MOBILE) {
         const ABOVE_MENU = document.querySelector('.header__above-header');
         const HEADER_CONTROLLER = new HeaderController(
+            'header',
             'header__icon-mob_open',
             'header__icon-mob_close',
-            'header__menu'
+            'header__menu',
+            'header_green-bg'
         );
 
-        function showAboveHeader(){
-            ABOVE_MENU.classList.add('show');
-            ABOVE_MENU.classList.remove('hide');
-        }
-        function hideAboveHeader(){
-            ABOVE_MENU.classList.add('show');
-            ABOVE_MENU.classList.remove('hide');
-        }
+        const OVERLAY_HEADER = new Overlay(
+            'header',
+            HEADER_CONTROLLER.getHeader(),
+            clickOverlayMob,
+        );
+
+        HEADER_CONTROLLER.getOpenIcon().addEventListener('click', () => {
+            OVERLAY_HEADER.show();
+            HEADER_CONTROLLER.openMenu()
+        })
+
+        HEADER_CONTROLLER.getCloseIcon().addEventListener('click', () => {
+            OVERLAY_HEADER.hide();
+            HEADER_CONTROLLER.closeMenu()
+        })
         
-        HEADER_CONTROLLER.getOpenIcon().addEventListener('click', () => HEADER_CONTROLLER.openMenu())
+        // Перемещение ABOVE_MENU внутрь списка
+        HEADER_CONTROLLER.getMenu().appendChild(ABOVE_MENU);
+
+        function clickOverlayMob(){
+            OVERLAY_HEADER.hide();
+            HEADER_CONTROLLER.closeMenu();
+        }
     }
 
     function showModal(){
-        debugger
         MODAL_CITY_LIST.displayCityList();
-        OVERLAY_CITY_LIST.show();
+        if(!IS_MOBILE) OVERLAY_CITY_LIST.show();
     }
 
     function clickItemCity(elementCity){
@@ -193,11 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
         OVERLAY_CITY_LIST.hide();
     }
 
-    function clickOverlayCityList(){
+    function clickOverlay(){
         OVERLAY_CITY_LIST.hide();
         MODAL_CITY_LIST.closeCityList();
     }
-
 
 
     SELECTED_CITY.addEventListener('click', () => showModal());
@@ -205,6 +249,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage['city']) SELECTED_CITY.textContent = localStorage.getItem('city');
 
     CITY_BLOCK.appendChild(MODAL_CITY_LIST.getListCities());
+
+    HEADER_MENU_ITEMS.forEach(item => item.addEventListener('click', () => {
+        switch(item.textContent){
+            case 'Главная':
+                scrollToElement(SECTION_SERVICES);
+                break;
+            case 'Контакты':
+                scrollToElement(SECTION_CONTACTS);
+                break; 
+            case 'Гарантии':
+                scrollToElement(SECTION_GUARANTEES);
+                break;  
+            case 'Trade-in':
+                scrollToElement(SECTION_TRADE_IN);
+                break;
+            case 'FAQ':
+                scrollToElement(SECTION_FAQ);
+                break;
+        }
+    }))
+
+    BUTTONS_TO_FORM.forEach(button => button.addEventListener('click', () => scrollToElement(SECTION_APP_FORM)))
+
+    function scrollToElement(element){
+        element.scrollIntoView({
+            block: 'start',
+            inline: 'center',
+            behavior: 'smooth'
+        })
+    }
 
 })
 

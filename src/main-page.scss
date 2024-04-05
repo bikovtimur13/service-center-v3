@@ -190,6 +190,7 @@ body {
             border-radius: 2.50vw;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
+            box-shadow: 0px 3px 25.2px 0px #001F6F1C;
         }
     }
 
@@ -197,6 +198,9 @@ body {
 
     &__container-box {
         @include nsm {
+            padding-left: 5.94vw;
+            padding-right: 5.94vw;
+            padding-bottom: 4.88vw;
             display: flex;
             flex-direction: column-reverse;
         }
@@ -211,8 +215,11 @@ body {
         align-items: center;
 
         @include nsm {
+            height: auto;
             align-items: flex-start;
             flex-direction: column;
+            justify-content: flex-start;
+            row-gap: 2.81vw;
         }
     }
 
@@ -309,6 +316,16 @@ body {
             background-image: url('/assets/images/main-page/location.svg');
             height: 18px;
             width: 13px;
+            @include nsm {
+                position: static;
+                height: 5.63vw;
+                width: 4.06vw;
+            }
+        }
+
+        @include nsm {
+            font-size: 5.31vw;
+            column-gap: .63vw;
         }
 
     }
@@ -389,8 +406,8 @@ body {
 
     &__icon-mob {
         @include nsm {
-            width: 6.25vw;
-            height: 3.13vw;
+            width: 7.25vw;
+            height: 4.13vw;
         }
 
         // .header__icon-mob_open
@@ -403,8 +420,8 @@ body {
 
         &_close {
             @include nsm {
-                width: 5.63vw;
-                height: 5.63vw;
+                width: 7.63vw;
+                height: 7.63vw;
                 transform: rotate(45deg);
             }
         }
@@ -449,6 +466,7 @@ body {
             flex-direction: column;
             align-items: flex-start;
             row-gap: 10.31vw;
+            margin-bottom: 10.6vw;
         }
     }
 
@@ -528,6 +546,7 @@ body {
         background-color: #383838;
         border-radius: 5px;
         padding: 0;
+        cursor: pointer;
 
         @include nsm {
             display: none;
@@ -667,11 +686,30 @@ body {
     overflow-y: scroll;
     z-index: 2;
 
+    @include nsm {
+        width: 100vw;
+        height: 100dvh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 5.94vw;
+        padding-top: 5.31vw;
+        padding-bottom: 10.31vw;
+    }
+
+    // .list-cities__item
+    
     &__item{
         margin-bottom: 10px;
         font-family: OpenSans;
         font-weight: 400;
         font-size: 15px;
+        
+        @include nsm {
+            margin-bottom: 4.38vw;
+            font-size: 5.31vw;
+            font-weight: 500;
+        }
 
         &:last-child{
             margin-bottom: 0;
@@ -856,6 +894,7 @@ body {
         line-height: 1;
         background-color: #383838;
         color: #fff;
+        cursor: pointer;
 
         @include nsm {
             width: 100%;
