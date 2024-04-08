@@ -181,26 +181,47 @@
             <form class="application-form__container-form">
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input class="application-form__input application-form__input_name __js__input" type="text"
-                        name="name" placeholder="Имя" required pattern="[A-Za-zА-яа-я]{2,}">
+                    <input 
+                        class="application-form__input application-form__input_name" 
+                        type="text"
+                        name="name" 
+                        placeholder="Имя" 
+                        pattern="[A-Za-zА-яа-я]{2,}"
+                        required 
+                    >
                     <p class="application-form__err __js__err">Пожалуйста, введите имя</p>
                 </div>
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input class="application-form__input application-form__input_tel __js__input" type="tel" name="tel"
-                        placeholder="Телефон для связи" required
-                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                    <input 
+                        class="application-form__input application-form__input_tel" 
+                        type="tel"
+                        name="tel"
+                        pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                        placeholder="Телефон для связи" 
+                        required
+                    >
                     <p class="application-form__err __js__err">Пожалуйста, введите номер телефона</p>
                 </div>
 
                 <div class="application-form__input-wrapper __js__input-wrapper">
-                    <input class="application-form__input __js__input" type="email" placeholder="Ваш e-mail"
-                        name="email" pattern="\S+\.[a-z]{2,4}$" required>
+                    <input 
+                        class="application-form__input" 
+                        type="email"
+                        placeholder="Ваш e-mail"
+                        name="email" 
+                        pattern="\S+\.[a-z]{2,4}$" 
+                        required
+                    >
                     <p class="application-form__err __js__err">Введите корректный адрес электронной почты</p>
                 </div>
 
                 <div class="application-form__wrapper-data-processing">
-                    <input class="application-form__data-processing-checkbox" type="checkbox" required>
+                    <input 
+                        class="application-form__data-processing-checkbox" 
+                        type="checkbox"
+                        required
+                    >
                     <div class="application-form__wrapper-checkbox">
                         <img src="./assets/images/main-page/checkbox-rejection-icon.svg" alt=""
                             class="application-form__img-checkbox application-form__img-checkbox_rejection hide">
@@ -211,8 +232,11 @@
                         даю согласие на обработку персональных данных</label>
                 </div>
 
-                <textarea class="application-form__input application-form__textarea __js__input" name="message"
-                    placeholder="Модель оборудования, симптомы поломки"></textarea>
+                <textarea 
+                    class="application-form__input application-form__textarea" 
+                    name="message"
+                    placeholder="Модель оборудования, симптомы поломки"
+                ></textarea>
 
                 <button class="application-form__button _disabled" type="button">Отправить заявку</button>
 

@@ -176,6 +176,148 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    class ValidationForm {
+        constructor(
+            formSelector,
+            telSelector,
+            inputWrapper,
+            buttonSelector,
+            inputSelector
+        ) {
+            this.form = document.querySelector(`.${formSelector}`);
+            this.phone = this.form.querySelector(`.${telSelector}`);
+            this.inputWrappers = this.form.querySelectorAll(`.${inputWrapper}`);
+            this.button = this.form.querySelector(`.${buttonSelector}`);
+            this.inputs = this.form.querySelectorAll(`${inputSelector}`);
+            this.modalThanks = document.querySelector('.modal-thanks__overlay');
+            this.modalCloseButton = document.querySelector('.modal-thanks__close');
+            this.inputs.forEach(element => {
+                if (element.name == 'name') {
+                    this.name = element
+                } else if (element.name == 'tel') {
+                    this.tel = element
+                } else if (element.name == 'email') {
+                    this.email = element
+                } else if (element.name == 'message') {
+                    this.message = element
+                }
+            })
+        }
+
+        initForm() {
+
+            const phoneOptions = {
+                mask: '+{7} (000) 000-00-00',
+            };
+
+            new IMask(this.phone, phoneOptions);
+
+            this.inputWrappers.forEach(wrapper => {
+                const input = wrapper.querySelector('input');
+                const errText = wrapper.querySelector('p');
+                input.addEventListener('input', (event) => this.handleInputChanges(event, input, errText));
+                input.addEventListener('blur', (event) => this.handleInputBlur(event, input, errText));
+            })
+
+            this.button.addEventListener('click', (event) => {
+                event.preventDefault();
+                let isValid = this.form.checkValidity()
+                if (isValid) {
+                    this.sendForm(event);
+                }
+            })
+        }
+
+        setBtnDisabled() {
+            this.button.disabled = true;
+            this.button.classList.add('_disabled');
+        }
+
+        setBtnActive() {
+            this.button.disabled = false;
+            this.button.classList.remove('_disabled');
+        }
+
+        handleInputChanges = (event, input, errText) => {
+            (this.form.checkValidity()) ? this.setBtnActive() : this.setBtnDisabled();
+
+            if (input.validity.valid && errText.classList.contains('_unhide')) {
+                errText.classList.remove('_unhide');
+            }
+
+        }
+
+        handleInputBlur = (event, input, errText) => {
+            if (!input.validity.valid) {
+                errText.classList.add('_unhide');
+            }
+        }
+
+        sendForm(event) {
+            let formData = new FormData(this.form);
+
+            const firstForm = document.querySelector('.application-form__container-form')
+            const secondForm = document.querySelector('.contacts__form')
+
+            const elementsFirstForm = firstForm.elements
+            const elementsSecondForm = secondForm.elements
+
+            for (let i = 0; i < elementsFirstForm.length; i++) {
+                elementsFirstForm[i].setAttribute('disabled', 'true');
+                this.button.classList.add('_disabled');
+            }
+            
+            for (let i = 0; i < elementsSecondForm.length; i++) {
+                elementsSecondForm[i].setAttribute('disabled', 'true');
+                this.button.classList.add('_disabled');
+            }
+
+            fetch('/post.php', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Access-Control-Allow-Origin': "*"
+                }
+            }).then(response => {
+                for (let i = 0; i < elementsFirstForm.length; i++) {
+                    elementsFirstForm[i].removeAttribute('disabled');
+                    this.button.classList.remove('_disabled');
+                }
+                for (let i = 0; i < elementsSecondForm.length; i++) {
+                    elementsSecondForm[i].removeAttribute('disabled');
+                    this.button.classList.remove('_disabled');
+                }
+
+                    return response.json()
+                })
+                .then(data => {
+                    var orderNumberElement = document.querySelector('.__js__order-number');
+                    // Установить значение элемента
+                    orderNumberElement.textContent = data.id;
+
+                    this.showModal();
+                    this.form.reset();
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+
+        hideModal() {
+            this.modalThanks.addEventListener('click', (e) => {
+                if (e.target === e.currentTarget || e.target.classList.contains('modal-thanks__close')) {
+                    this.modalThanks.classList.remove('modal-thanks__overlay_active');
+                }
+            });
+        }
+
+        showModal() {
+            this.modalThanks.classList.add('modal-thanks__overlay_active');
+            this.hideModal();
+        }
+    }
+
     const MODAL_CITY_LIST = new CityList(
         'list-cities',
         'list-cities__item',
@@ -282,5 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    const APPLICATION_FORM = new ValidationForm(
+        'application-form__container-form',
+        'application-form__input_tel', 
+        'application-form__input-wrapper',   
+        'application-form__button',
+        'application-form__input'
+    );
+    APPLICATION_FORM.initForm();
+        
+        debugger
 })
 
