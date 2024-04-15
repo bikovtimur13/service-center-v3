@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const BUTTONS_TO_FORM = [document.querySelector('.header__button'), document.querySelector('.poster__button')];
 
+    const QUESTIONS = document.querySelectorAll('.faq__question');
+    const QUESTIONS_BOTTOM = document.querySelectorAll('.faq-bottom__question');
+
+
     class CityList{
         listCities
         cityItem
@@ -433,6 +437,63 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     APPLICATION_FORM.initForm();
         
-        debugger
+    
+    QUESTIONS.forEach(item => {
+        item.addEventListener('click', () => {
+            const arrow = item;
+            const content = item.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                document.querySelectorAll('.faq__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                document.querySelectorAll('.faq__question').forEach(item => {
+                    item.classList.remove('_active', 'faq__question-arrow-rotate');
+                })
+            } else {
+                document.querySelectorAll('.faq__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = 1;
+
+                document.querySelectorAll('.faq__question').forEach(item => {
+                    item.classList.remove('_active','faq__question-arrow-rotate');
+                })
+                arrow.classList.add('_active' , 'faq__question-arrow-rotate');
+            }
+        })
+    })
+    
+    QUESTIONS_BOTTOM.forEach(item => {
+        item.addEventListener('click', () => {
+            const arrow = item;
+            const content = item.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                document.querySelectorAll('.faq-bottom__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                document.querySelectorAll('.faq-bottom__question').forEach(item => {
+                    item.classList.remove('_active', 'faq-bottom__question-arrow-rotate');
+                })
+            } else {
+                document.querySelectorAll('.faq-bottom__text').forEach(item => {
+                    item.style.maxHeight = null;
+                    item.style.opacity = null;
+                })
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = 1;
+
+                document.querySelectorAll('.faq-bottom__question').forEach(item => {
+                    item.classList.remove('_active','faq-bottom__question-arrow-rotate');
+                })
+                arrow.classList.add('_active' , 'faq-bottom__question-arrow-rotate');
+            }
+        })
+    })
 })
 
