@@ -857,7 +857,7 @@ body {
     padding-bottom: 68px;
 
     @include nsm {
-        padding-top: 9.69vw;
+        padding-top: 31.68vw;
         padding-bottom: 34.06vw;
     }
 
@@ -886,6 +886,7 @@ body {
     // .poster__button
 
     &__button {
+        position: relative;
         width: 487px;
         height: 59px;
         border-radius: 7px;
@@ -895,6 +896,13 @@ body {
         background-color: #383838;
         color: #fff;
         cursor: pointer;
+        transition: all .7s ease-in-out;
+        z-index: 5;
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.03);
+        }
 
         @include nsm {
             width: 100%;

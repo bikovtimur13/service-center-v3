@@ -260,11 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sendForm(event) {
             let formData = new FormData(this.form);
 
-            const firstForm = document.querySelector('.application-form__container-form')
-            const secondForm = document.querySelector('.contacts__form')
+            const firstForm = document.querySelector('.application-form__container-form');
+            const secondForm = document.querySelector('.contacts__form');
+            const thirdForm = document.querySelector('.trade-in__form');
 
             const elementsFirstForm = firstForm.elements
             const elementsSecondForm = secondForm.elements
+            const elementsThirdForm = thirdForm.elements
 
             for (let i = 0; i < elementsFirstForm.length; i++) {
                 elementsFirstForm[i].setAttribute('disabled', 'true');
@@ -273,6 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             for (let i = 0; i < elementsSecondForm.length; i++) {
                 elementsSecondForm[i].setAttribute('disabled', 'true');
+                this.button.classList.add('_disabled');
+            }
+
+            for (let i = 0; i < elementsThirdForm.length; i++) {
+                elementsThirdForm[i].setAttribute('disabled', 'true');
                 this.button.classList.add('_disabled');
             }
 
@@ -291,7 +298,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     elementsSecondForm[i].removeAttribute('disabled');
                     this.button.classList.remove('_disabled');
                 }
-
+                for (let i = 0; i < elementsThirdForm.length; i++) {
+                    elementsThirdForm[i].removeAttribute('disabled');
+                    this.button.classList.remove('_disabled');
+                }
                     return response.json()
                 })
                 .then(data => {
